@@ -1,0 +1,15 @@
+.logo{
+    color: var(--Primary, var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C));
+    font-family: Mulish;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.btn-primary {
+    border: 1px solid #453985 !important;
+    background: #453985;
+}
+.navbar-text{
+    text-transform: capitalize;
+}
