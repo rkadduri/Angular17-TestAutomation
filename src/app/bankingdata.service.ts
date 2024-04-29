@@ -14,8 +14,6 @@ export class BankingdataService {
   selectBillerSuccess:Array<Object> = []
   rechargePaymentSuccess:boolean = false;
 
-  
-
   checkUserInApp(searchUser: string){
     return this.userData.includes(searchUser);
   }

@@ -4,11 +4,12 @@ import { NavbarComponent } from './dashboard/account-details/navbar/navbar.compo
 import { LoginComponent } from './userdata/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { filter } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent,HttpClientModule,NavbarComponent],
+  imports: [RouterOutlet, LoginComponent,HttpClientModule,NavbarComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
