@@ -1,0 +1,34 @@
+*{
+    padding: 0px;
+    margin: 0px;
+  }
+  .congratsText {
+      color: #082341;
+      font-family: Mulish;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+  }
+  .transText {
+      color: #2d455f;
+      text-align: center;
+      font-family: Mulish;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 28px; 
+  }
+  .dashBoardBtn {
+      color: #082341;
+      background: #fff;
+      text-align: center;
+      font-family: Mulish;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.56px;
+      padding: 10px 50px 10px 50px;
+  }
+    

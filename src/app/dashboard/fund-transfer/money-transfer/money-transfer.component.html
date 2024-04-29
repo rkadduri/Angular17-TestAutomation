@@ -1,1 +1,129 @@
-<p>money-transfer works!</p>
+<div class="container-fluid">
+    <div class="card">
+          <div class="card-header">
+               Transfer Money to Anyone, Anywhere
+          </div>
+          <div>
+            <form [formGroup]="moneyTransferForm">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex flex-row">
+                            <label class="sub-text transferDetails">From</label>
+                           <div class="d-flex flex-column savings">
+                                <p class="savingsAccNumber">Savings - 12345678910111213</p>
+                                <p class="balance">Balance - {{availBalance | currency:"INR"}}</p>
+                           </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <label class="sub-text transferDetails">To<span class="text-danger">*</span></label>
+                           <div class="d-flex flex-row senderOption">
+                                <select class="transferInputs ms-5" formControlName="payee" required>
+                                    <option *ngFor="let payee of payeeNames" [value]="payee">{{payee}}</option>
+                                </select>
+                                <div *ngIf="payeeName">
+                                    <p class="text-danger">Please Select Payee</p>
+                                </div>
+                                <p class="or">or</p>
+                                <button class="addPayeeBtn cancelAndSaveBtn" (click)="openAddpayeePopup(copyContent)">ADD PAYEE</button>
+                           </div>
+                           <ng-template #copyContent let-modal>
+                            <!-- <app-forgot-info></app-forgot-info> -->
+                            <app-addpayee></app-addpayee>
+                        </ng-template>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mt-3">
+                                    <label class="acc-number transferDetails">Account Number<span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="Enter Account Number" class="transferInputs ms-5" formControlName="accountNumber" maxlength="18" (keypress)="onKeyPress($event)">
+                                    <div *ngIf="moneyTransferForm.get('accountNumber')?.hasError('required') && moneyTransferForm.get('accountNumber')?.touched" class="text-danger">
+                                        <p class="error-msg">Please Enter Account Number</p>
+                                    </div>
+                                    <div *ngIf="moneyTransferForm.get('accountNumber')?.hasError('pattern') || moneyTransferForm.get('accountNumber')?.hasError('minlength')" class="text-danger">
+                                        <p class="error-msg">Account Number must be atleast 8 characters</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-3">
+                                    <label class="bold-text">Re- Enter Account Number<span class="text-danger">*</span></label>
+                                    <input type="text" class="transferInputs reAccNoAndRemarks" placeholder="Enter Account Number" formControlName="reEnterAccountNo" required maxlength="18" (keypress)="onKeyPress($event)">
+                                    <div *ngIf="moneyTransferForm.get('reEnterAccountNo')?.hasError('required') && moneyTransferForm.get('reEnterAccountNo')?.touched" class="text-danger">
+                                           <p class="error-msg"> Please Enter Account Number</p>
+                                    </div>
+                                    <div *ngIf="moneyTransferForm.hasError('mismatch') && moneyTransferForm.get('reEnterAccountNo')?.touched" class="text-danger">
+                                        <p class="error-msg"> Account Number do not match.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="d-flex flex-column">
+                        <p class="bold-text transaction">Transaction Details</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="sub-text transferDetails">Enter the Amount<span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="Enter Amount" class="transferInputs amount" formControlName="amount" required (keypress)="onKeyPress($event)" maxlength="5">
+                                </div>
+                                <div *ngIf="moneyTransferForm.get('amount')?.hasError('required') && moneyTransferForm.get('amount')?.touched">
+                                    <p class="error-msg">Please Enter Amount</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bold-text">Remarks for transaction<span class="text-danger">*</span></label>
+                                    <input type="text" placeholder="Please write here" class="transferInputs reAccNoAndRemarks remarks" formControlName="remarks"  maxlength="10">
+                                </div>
+                                <div *ngIf="moneyTransferForm.get('remarks')?.hasError('required') && moneyTransferForm.get('remarks')?.touched">
+                                    <p class="error-msg">Please Enter Remarks</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="d-flex flex-column">
+                        <p class="bold-text transaction">Payment Mode</p>
+                        <div class="d-flex flex-row">
+                            <p class="sub-text transferDetails">Select the Payment Mode<span class="text-danger">*</span></p>
+                            <div class="d-flex flex-column paymentMode p-2 ps-3">
+                                <div class="d-flex flex-row">
+                                    <input type="radio" name="paymentModeInput" class="form-check-input" formControlName="paymentModeInput" value="IMPS">
+                                     <label class="paymentModeLabel">IMPS</label>
+                                </div>
+                                <p class="instantTransfer pt-3">Max Rs. 50,000 per day. Instant transfer 24*7
+                                    transferable</p>
+                            </div>
+                            <div class="d-flex flex-column paymentMode p-2 ps-3">
+                                <div class="d-flex flex-row">
+                                    <input type="radio" name="paymentModeInput" class="form-check-input" formControlName="paymentModeInput" value="NEFT">
+                                     <label class="paymentModeLabel">NEFT</label>
+                                </div>
+                                <p class="instantTransfer pt-3">Max Rs. 1,00,000 Lakh per day. Receiver gets money in
+                                    2 to 24 Hrs</p>
+                            </div>
+                            <div class="d-flex flex-column paymentMode p-2 ps-3">
+                                <div class="d-flex flex-row">
+                                    <input type="radio" name="paymentModeInput" class="form-check-input" formControlName="paymentModeInput" value="RTGS">
+                                     <label class="paymentModeLabel">RTGS</label>
+                                </div>
+                                <p class="instantTransfer pt-3">Min Rs. 75,000, Max Rs. 10 Lakh per day. Real time
+                                    transaction.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="d-flex flex-row justify-content-center mt-4 mb-4">
+                        <button class="cancelAndSaveBtn me-2" routerLink="/dashboard" id="back">Back</button>
+                        <button class="cancelAndSaveBtn ms-3" (click)="onCancel()" id="cancel">cancel</button>
+                        <button type="submit" id="send" class="btn btn-primary cancelAndSaveBtn saveBtn" [disabled]="moneyTransferForm.invalid" (click)="onSubmit(moneyTransferForm.value)">Send</button>
+                    </div>
+            </form>
+           
+          </div>
+    </div>
+</div>
+
+
+  
+

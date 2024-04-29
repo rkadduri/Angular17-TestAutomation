@@ -1,0 +1,111 @@
+
+.modal-title{
+    color: white;
+    font-size:18px ;
+  }
+  
+  .inputField {
+    width: 288px;
+    height: 36px;
+    flex-shrink: 0;
+    padding-left: 10px;
+    border-radius: 2px;
+    color: #082341;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: 1px solid #d2d2d2;
+  }
+  
+  .Det {
+    color: #082341;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .accountDetField {
+    margin-left: 36px;
+  }
+.form-check-input:checked {
+    background-image: url("/assets/tick.svg");
+  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+.eachNote {
+    line-height: 22px; /* 175% */
+    letter-spacing: 0.32px;
+    font-size: 12px !important;
+  }
+.payeeBtns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .error-msg{
+    color: red;
+    font-weight: bold;
+    padding-left: 218px;
+}
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C);
+  z-index: 1000; /* ensure the header is above the modal overlay */
+  padding: 5px !important;
+  padding-left: 15px !important;
+}
+.btn-primary ,.btn-primary:active{
+  border: 1px solid #453985 !important;
+  background: #453985;
+}
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  z-index: 1000; /* ensure the footer is above the modal overlay */
+}
+.modal-scroll{
+  max-height: 400px; 
+  overflow-y: auto;
+
+}
+.modal-body{
+  padding: 0 !important;
+}
+.eachBlock {
+  max-width: 100%; 
+  overflow-x: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.payee-details{
+  color: var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; 
+}
+.cross{
+  background-color: white;
+  padding: 4px;
+  margin-right: 5px;
+}
+.error-text{
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0 !important;
+}
+.ifscCode{
+   text-transform: uppercase;
+}
+
+  

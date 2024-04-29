@@ -31,6 +31,14 @@ describe('AccountDashboardComponent', () => {
     expect(component.isloaded).toBe(false);
   });
 
+  it('Defining Loader Flag',()=>{
+    expect(component.isloaded).toBeDefined();
+  });
+
+  it('Initialzing Loader',()=>{
+    expect(component.isloaded).toBe(false);
+  });
+
   // it('should set isLoaded to true after interval', fakeAsync(() => {
   //   component.isloaded=false;
   //   component.ngOnInit();

@@ -52,6 +52,4 @@ describe('FundTransferComponent', () => {
     expect(paragraphElement.nativeElement.textContent.trim()).toBe('Statements');
     expect(paragraphElement.nativeElement.getAttribute('class')).toContain('card-text');
   });
-
-
 });

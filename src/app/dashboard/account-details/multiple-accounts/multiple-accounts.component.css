@@ -1,0 +1,59 @@
+.bg-container {
+    padding-top: 10px;
+  }
+  .savingsAccount {
+    background: linear-gradient(0deg, #da22ff 0%, #9733ee 100%);
+    opacity: 1;
+  }
+  .loanAccount {
+    background: linear-gradient(0deg, #ec6f66 0%, #f3a183 100%);
+    opacity: 0.5;
+  }
+  .creditCard {
+    background: linear-gradient(284deg, #00fff0 -19.4%, #0083fe 54.6%);
+    opacity:0.5;
+  }
+  .overDraftAccount {
+    background: linear-gradient(180deg, #81cedf 0%, #9464fd 100%);
+    opacity: 0.5;
+  }
+  .userCard {
+    width: 300px;
+    height: 180px;
+    flex-shrink: 0;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .circleIcon {
+    margin: 8px 0px 0px 8px;
+  }
+  .accountType {
+    font-weight: 500;
+    margin-top: 15px;
+    margin-right: 3px;
+  }
+  .accountNumber {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 30px 0px 0px 10px;
+  }
+  .accountHolderName {
+    font-weight: 500;
+    padding: 10px 0px 0px 10px;
+    text-transform: capitalize;
+  }
+  .date {
+    font-weight: 400;
+    padding: 10px 0px 0px 10px;
+  }
+  .cardDetails {
+    color: #fff;
+    font-style: normal;
+    font-size: 14px;
+    line-height: normal;
+  }
+  

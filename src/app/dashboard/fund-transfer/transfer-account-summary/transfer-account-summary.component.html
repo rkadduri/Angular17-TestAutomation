@@ -1,1 +1,38 @@
-<p>transfer-account-summary works!</p>
+<div class="container-fluid mt-3">
+    <div class="bg-container">
+          <div class="accountSummary d-flex flex-row">
+            <p class="summaryheading">Account Summary</p>
+          </div>
+          <div class="accountDetails d-flex flex-row justify-content-between p-3">
+               <div>
+                    <p class="accountHeading">Account Holder Name</p>
+                    <p class="accountValues" id="accountHolderName">{{accountHolder}}</p>
+                </div>
+                <div>
+                    <p class="accountHeading">Account Type</p>
+                    <p class="accountValues" id="accountType">Savings Account</p>
+                </div>
+                <div>
+                    <p class="accountHeading">Account Number</p>
+                    <p class="accountValues" id="accountNumber">1234567890111213</p>
+                </div>
+                <div>
+                    <p class="accountHeading">IFSC Code</p>
+                    <p class="accountValues" id="ifscCode">ABCD0001234</p>
+                </div>
+                <div>
+                    <p class="accountHeading">Available Balance in Rupees</p>
+                    <p class="accountValues" id="balance">{{accbalance | currency:"INR"}}</p>
+                </div>
+                <div>
+                    <p class="accountHeading">Account Branch</p>
+                    <p class="accountValues" id="branch">KPHB</p>
+                </div>
+                
+          </div>
+    </div>
+</div>
+
+
+
+

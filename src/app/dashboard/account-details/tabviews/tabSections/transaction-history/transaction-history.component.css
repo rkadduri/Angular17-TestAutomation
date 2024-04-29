@@ -1,0 +1,115 @@
+.lablespace {
+    margin-top: 7px;
+    padding-left: 30px;
+  }
+  
+  .ToDate {
+    padding-left: 100px;
+  }
+  
+  /* .btnSpace{
+    margin-left: 450px;
+  } */
+  
+  .lblText{
+    color: #082341;
+    
+  }
+  
+  .periodSpace{
+    padding-left: 187px;
+  }
+  
+  .tabArea {
+    padding: 10px;
+    flex-shrink: 0;
+  }
+  
+  .tabFont {
+    height: 36px;
+    flex-shrink: 0;
+    color: #37383a;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  
+  .tabData {
+    border: 1px solid #d9d9da;
+    background: #fff;
+  }
+  .tabHead {
+    border-collapse: collapse;
+    border: 1px solid #d9d9da;
+    background: #f2f2f2;
+  }
+  
+  .eachRow {
+    border-bottom: 1px solid #fff;
+  }
+  
+  .Pagearea {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .pagNumbers {
+    list-style-type: none;
+  }
+  
+  .lastRow {
+    padding-top: 20px;
+    border-top: 1.5px solid #d6d6d6;
+  }
+  
+  .leftArrow {
+    padding: 4px;
+  }
+  
+  .rowsPg {
+    color: #979797;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .paginationArea {
+    height: 55px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 1px;
+    cursor: pointer;
+  }
+  
+  .firstPg {
+    background: #082341;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .pgNo {
+    padding: 8.5px;
+  }
+  
+  .form-check-input:not(:checked) {
+    border: 1px solid var(--Neutral-Colors-Light-Gray, #C3C2CC);
+    background: var(--Primary-White, #FFF);
+    cursor: pointer;
+  }
+  .form-check-input:checked {
+    border: 5px solid var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C);
+    background: var(--Primary-White, #FFF);
+    cursor: pointer;
+  }
+  .btn-primary{
+    color: #FFF;
+    background: #082341;
+  }
+  
+  
