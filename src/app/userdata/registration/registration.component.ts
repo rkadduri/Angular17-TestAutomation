@@ -19,7 +19,7 @@ export class RegistrationComponent {
   imageWidth = 700; 
   imageHeight = 800;
   maxDate!: string;
-  countries: string[] = ['Select Country', 'India','USA', 'Canada', 'UK', 'Australia', 'Other'];
+  countries: string[] = ['Select Country', 'India','USA', 'Canada', 'UK', 'Australia', 'Poland', 'Other'];
   states: string[] = ['Select State','Telangana','Andhra Pradesh','Karnataka','Tamil Nadu','Himachal Pradesh']
   constructor(private fb: FormBuilder,private router: Router, private register: BankingdataService ) { 
     this.setMaxDate()

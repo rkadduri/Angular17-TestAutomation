@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
+import { NgClass, NgStyle } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [NgClass,NgStyle,RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
