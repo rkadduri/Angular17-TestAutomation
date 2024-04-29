@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { BankingdataService } from '../../../bankingdata.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-select-biller',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,RouterOutlet,RouterLink],
   providers:[BankingdataService],
   templateUrl: './select-biller.component.html',
   styleUrl: './select-biller.component.css'
@@ -56,12 +56,12 @@ export class SelectBillerComponent {
 
   onSubmit() {
     let billValue = this.form.value.billDetailsAmount;
-    console.log(billValue);
     let rechargeBillValue = this.rechargeForm.value.amount;
-    console.log(rechargeBillValue)
+    
     if (this.form.valid && billValue <= this.availBalance) {
       this.service.selectBillerSuccess.pop()
       this.service.selectBillerSuccess.push(this.form.value)
+      console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = false;
       this.service.balance -= billValue
       this.route.navigate(['/payment'])
@@ -69,6 +69,7 @@ export class SelectBillerComponent {
     if (this.rechargeForm.valid && rechargeBillValue <= this.availBalance) {
       this.service.selectBillerSuccess.pop()
       this.service.selectBillerSuccess.push(this.rechargeForm.value);
+      console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = true;
       this.service.balance -= rechargeBillValue
       this.route.navigate(['/payment'])
@@ -110,12 +111,4 @@ export class SelectBillerComponent {
       event.preventDefault();
     }
   }
-
-  // @ViewChild('formElement') formElement!: ElementRef;
-  // ngAfterViewInit() {
-  //   const formFields = this.formElement.nativeElement.querySelectorAll('input');
-  //   formFields.forEach((field: HTMLInputElement) => {
-  //     field.setAttribute('autocomplete', 'off');
-  //   });
-  // }
 }
