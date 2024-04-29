@@ -1,0 +1,185 @@
+
+<div class="d-flex mt-4 ms-4 justify-content-center">
+    <!-- Transaction Date -->
+    <div class="form-check transfield">
+      <input class="form-check-input" (change)="userChange()" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+      <label class="form-check-label mt-1 bold-text" for="flexRadioDefault1">Transaction Date</label>
+    </div>
+    <!-- From and To Date Inputs -->
+    <div class="d-flex ms-3">
+      <div class="d-flex Duration">
+        <label class="lablespace me-3 balance lblText"><p>From</p></label>
+        <input class="form-control Field inputBox" type="date" [(ngModel)]="fromTransDate" name="fromTransDate" (click)="showWithDate()" />
+      </div>
+      <div class="d-flex ToDate">
+        <label class="lablespace me-3 balance lblText"><p>To</p></label>
+        <input class="form-control Field inputBox" type="date" [(ngModel)]="toTransDate" name="toTransDate" (click)="showWithDate()" max="{{ todayDate | date : 'yyyy-MM-dd' }}" />
+      </div>
+    </div>
+  </div>
+  <div class="d-flex mt-3 ms-4 periodSpace">
+    <!-- Transaction Period -->
+    <div class="form-check transfield">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="userChange()" id="flexRadioDefault2" (click)="showWithPeriod()" />
+      <label class="form-check-label mt-1 bold-text" for="flexRadioDefault2">Transaction Period</label>
+    </div>
+    <!-- Select Period Dropdown -->
+    <div class="d-flex">
+      <label class="lablespace balance lblText me-3"><p>Select</p></label>
+      <select class="form-select Field inputBox" name="duration" id="duration" (change)="onSelectPeriodicDays($event)">
+        <option *ngFor="let eachday of periodicDays" [value]="eachday">{{ eachday }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="d-flex mb-4 mt-5 justify-content-center">
+    <!-- Cancel and Show Buttons -->
+    <button class="cancelAndSaveBtn me-2" routerLink="/dashboard" id="backBtn">Back</button>
+        <button class="cancelAndSaveBtn ms-3" (click)="cancelField()">CANCEL</button>
+    <button class="btn btn-primary cancelAndSaveBtn saveBtn me-2" (click)="submitField()">SHOW</button>
+  </div>
+  
+  <!-- Displaying Transaction Data -->
+  <div class="tabArea mt-2" *ngIf="showData">
+    <table class="table tabFont">
+      <thead class="tabHead">
+        <!-- Table Headers -->
+        <th class="p-2 text-center">Sl.No</th>
+        <th class="p-2">Value Date</th>
+        <th class="p-2">Transaction Date</th>
+        <th class="p-2">Transaction Remarks</th>
+        <th class="p-2 text-end">Withdrawal Amount</th>
+        <th class="p-2">Deposit Amount</th>
+        <th class="p-2">Balance</th>
+        <th class="p-2 text-end">Day Closing Balance</th>
+      </thead>
+      <tbody class="tabData" *ngIf="(leftpaginationMode==false)&&(rightpaginationMode==true)else rowsPerPageView">
+        <!-- Rows with Pagination -->
+        <tr *ngFor="let data of getPageTransactions()" class="eachRow">
+          <td class="text-center data">{{ data.sno }}</td>
+          <td class="data">{{ data.valueDate }}</td>
+          <td class="data">{{ data.transactionDate }}</td>
+          <td class="data">{{ data.transctionRemarks }}</td>
+          <td class="data text-end">{{ data.withDrawalAmount }}</td>
+          <td class="data">{{ data.depositAmount }}</td>
+          <td class="data">{{ data.balance }}</td>
+          <td class="text-end data">{{ data.dayClosingBalance }}</td>
+        </tr>
+        <!-- Pagination Controls -->
+        <tr class="lastRow">
+          <td colspan="8">
+            <div class="Pagearea">
+              <div class="perPageArea d-flex">
+                <div>
+                  <p class="mt-3 rowsPg">Rows Per Page</p>
+                </div>
+                <div>
+                  <select class="form-select mt-2 ms-3 ps-3 pe-3 rounded-0" [(ngModel)]="selectedShowperPage" (change)="onSelectPageRows($event)">
+                    <option value="5" [selected]="selectedShowperPage==5">5</option>
+                    <option value="10" [selected]="selectedShowperPage==10">10</option>
+                    <option value="15" [selected]="selectedShowperPage==15">15</option>
+                    <option value="20" [selected]="selectedShowperPage==20">20</option>
+                  </select>
+                </div>
+              </div>
+              <div class="d-flex paginationArea">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link mt-1 rounded-0 border-0" aria-label="Previous" (click)="previousPage()">
+                        <img src="assets/left-arrow.svg" alt="" class="mt-2" />
+                      </a>
+                    </li>
+                    <div *ngFor="let eachpgno of rightPaginationItems">
+                      <li class="page-item" [class.active]="eachpgno===currentPage">
+                        <a class="page-link pgNo mt-2 ms-2 border-0 rowsPg" (click)="onPageChange(eachpgno)" [class.active]="eachpgno===currentPage" [ngStyle]="{
+                          'background': eachpgno===currentPage ? '#082341' : '#fff',
+                          'font-weight':eachpgno===currentPage ?'700' : 'bold',
+                          'font-size':eachpgno===currentPage ?'12px':'16px',
+                          'color': eachpgno===currentPage?'#FFF':'#979797',
+                          'font-style':'normal',
+                          'padding-left':'10px',
+                          'padding-right':'10px',
+                          'text-transform':'capitalize',
+                        }">{{eachpgno}}</a>
+                      </li>
+                    </div>
+                    <li class="page-item">
+                      <a class="page-link mt-1 rounded-0 border-0" (click)="nextPage()">
+                        <img src="assets/right-arrow.svg" alt="RightArrow" class="mt-2" />
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <!-- Template for Rows per Page -->
+      <ng-template #rowsPerPageView>
+        <tbody class="tabData">
+          <tr *ngFor="let data of TransHistory.slice(startIndex,endIndex)" class="eachRow">
+            <td class="text-center data">{{ data.sno }}</td>
+            <td class="data">{{ data.valueDate }}</td>
+            <td class="data">{{ data.transactionDate }}</td>
+            <td class="data">{{ data.transctionRemarks }}</td>
+            <td class="data text-end">{{ data.withDrawalAmount }}</td>
+            <td class="data">{{ data.depositAmount }}</td>
+            <td class="data">{{ data.balance }}</td>
+            <td class="text-end data">{{ data.dayClosingBalance }}</td>
+          </tr>
+          <!-- Pagination Controls -->
+          <tr class="lastRow">
+            <td colspan="8">
+              <div class="Pagearea">
+                <div class="perPageArea d-flex">
+                  <div>
+                    <p class="mt-3 rowsPg">Rows Per Page</p>
+                  </div>
+                  <div>
+                    <select class="form-select mt-2 ms-3 ps-3 pe-3 rounded-0" [(ngModel)]="selectedShowperPage" (change)="onSelectPageRows($event)">
+                      <option value="5" [selected]="selectedShowperPage==5">5</option>
+                      <option value="10" [selected]="selectedShowperPage==10">10</option>
+                      <option value="15" [selected]="selectedShowperPage==15">15</option>
+                      <option value="20" [selected]="selectedShowperPage==20">20</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="d-flex paginationArea">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link mt-1 rounded-0 border-0" aria-label="Previous">
+                          <img src="assets/left-arrow.svg" alt="" class="mt-2" />
+                        </a>
+                      </li>
+                      <div *ngFor="let eachpgno of rightPaginationItems">
+                        <li class="page-item" [class.active]="eachpgno===currentPage">
+                          <a class="page-link pgNo mt-2 ms-2 border-0 rowsPg" (click)="onPageChange(eachpgno)" [class.active]="eachpgno===currentPage" [ngStyle]="{
+                            'background': eachpgno===currentPage ? '#082341' : '#fff',
+                            'font-weight':eachpgno===currentPage ?'700' : 'bold',
+                            'font-size':eachpgno===currentPage ?'12px':'16px',
+                            'color': eachpgno===currentPage?'#FFF':'#979797',
+                            'font-style':'normal',
+                            'padding-left':'10px',
+                            'padding-right':'10px',
+                            'text-transform':'capitalize',
+                          }">{{eachpgno}}</a>
+                        </li>
+                      </div>
+                      <li class="page-item">
+                        <a class="page-link mt-1 rounded-0 border-0">
+                          <img src="assets/right-arrow.svg" alt="RightArrow" class="mt-2" />
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </ng-template>
+    </table>
+  </div>
+  

@@ -1,0 +1,50 @@
+.data {
+    padding: 10px;
+  }
+  .eachDate {
+    color: #494848;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  .eachName {
+    color: #1f1f1f;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .eachType {
+    color: #494848;
+  
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .eachDesc {
+    color: #494848;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .eachAmountCredit {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .eachTotamount {
+    color: #082341;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  

@@ -20,4 +20,12 @@ describe('AccountDashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Defining Loader Flag',()=>{
+    expect(component.isloaded).toBeDefined();
+  });
+
+  it('Initialzing Loader',()=>{
+    expect(component.isloaded).toBe(false);
+  });
 });

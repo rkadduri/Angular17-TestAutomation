@@ -1,0 +1,757 @@
+{
+    "RecentTrans":[
+        {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Natasha Davel",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          },
+          {
+            "symbol":"assets/upward-arrow.svg",
+            "name":"Fusion Restro",
+            "transDate":"15/03/2024",
+            "transtype":"Debited",
+            "transDesc":"123456/Fusion Restro",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,10,256.00"
+          },
+          {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Evoke Technologies",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          },
+          {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Bilnk It",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          },
+          {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Bilnk It",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          },
+          {
+            "symbol":"assets/upward-arrow.svg",
+            "name":"Zerofourty Brewering",
+            "transDate":"15/03/2024",
+            "transtype":"Debited",
+            "transDesc":"123456/Fusion Restro",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,10,256.00"
+          },
+          {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Bilnk It",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          },
+          {
+            "symbol":"assets/upward-arrow.svg",
+            "name":"Zerofourty Brewering",
+            "transDate":"15/03/2024",
+            "transtype":"Debited",
+            "transDesc":"123456/Fusion Restro",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,10,256.00"
+          },
+          {
+            "symbol":"assets/upward-arrow.svg",
+            "name":"Zerofourty Brewering",
+            "transDate":"15/03/2024",
+            "transtype":"Debited",
+            "transDesc":"123456/Fusion Restro",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,10,256.00"
+          },
+          {
+            "symbol":"assets/down-arrow.svg",
+            "name":"Bilnk It",
+            "transDate":"15/03/2024",
+            "transtype":"Credited",
+            "transDesc":"IMPS 1234/UPI123456/DIleep Thotakura/PhonePe",
+            "amountcredit":"₹ 1,256.00",
+            "totAmount":"₹ 1,11,256.00"
+          }
+    ],
+    "TransHistory":[
+      {
+        "sno": "01",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "02",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "03",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "04",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "05",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "06",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "07",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "08",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "09",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "10",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "11",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "12",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "13",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "14",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "15",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "16",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "17",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "18",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "19",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "20",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "21",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "22",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "23",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "24",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "25",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "26",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "27",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "28",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "29",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "30",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "31",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "32",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "33",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "34",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "35",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "36",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "37",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "38",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "39",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "40",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "41",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "42",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "43",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "44",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "45",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "46",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "47",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "48",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "49",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "50",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "51",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "52",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "53",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "54",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "55",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "56",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "57",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "58",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "59",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      },
+      {
+        "sno": "60",
+        "valueDate": "18/03/2024",
+        "transactionDate": "18/03/2024",
+        "transctionRemarks":
+          "VIN/BLINKIT/202403031436/4063-09545745/Phone pe/Blinkit",
+        "withDrawalAmount": "314.45",
+        "depositAmount": "",
+        "balance": "1109.82",
+        "dayClosingBalance": "1109.82"
+      }
+
+    ]
+}

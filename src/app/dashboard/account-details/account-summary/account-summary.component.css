@@ -1,0 +1,17 @@
+.hide{
+    padding-right: 50px;
+ }
+ .show{
+     padding-left: 10px;
+ }
+ .checkbox{
+     width: 40px;
+     height: 20px;
+     flex-shrink: 0;
+     border-radius: 20px;
+ }
+ input:focus, input.form-check-input:focus {
+     outline:none !important;
+     outline-width: 0 !important;
+     box-shadow: none;
+ }

@@ -1,0 +1,95 @@
+.card{
+    border-radius: 0px !important;
+    margin: 7px;
+    margin-bottom: 20px;
+  }
+.transaction{
+   padding: 30px;
+}
+.senderOption{
+    padding-left: 110px;
+}
+.instantTransfer{
+  color: #646464;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.amount{
+    margin-left: 40px;
+}
+.remarks{
+    margin-left: 35px !important;
+}
+.transferDetails{
+    padding-left: 50px;
+}
+.acc-number{
+    font-weight: bold;
+    color: #082341;
+}
+.reAccNoAndRemarks{
+    width: 360px;
+    height: 36px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #D2D2D2;
+    background: #FFF;
+    margin-left: 20px;
+}
+.savings{
+    padding-left: 140px;
+}
+.addPayeeBtn{
+    width: 140px;
+    font-weight: 700;
+}
+.paymentMode{
+    width: 280px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #082341;
+    background: #FFF;
+    margin-left: 40px;
+}
+.paymentModeLabel{
+    color: #082341;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    padding-left: 10px;
+}
+.or{
+    color: #082341;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 60px;
+    padding-right: 30px;
+    padding-top: 5px;
+}
+.form-check-input:not(:checked) {
+    border: 1px solid var(--Neutral-Colors-Light-Gray, #C3C2CC);
+    background: var(--Primary-White, #FFF);
+    cursor: pointer;
+}
+.form-check-input:checked {
+    border: 5px solid var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C);
+    background: var(--Primary-White, #FFF);
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .btn-primary ,.btn-primary:active{
+    border: 1px solid #453985 !important;
+    background: #453985;
+}

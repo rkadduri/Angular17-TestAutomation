@@ -1,1 +1,11 @@
-<p>payment-successfull works!</p>
+<div class="container-fluid mb-5">
+    <app-navbar></app-navbar>
+    <main class="mainScreen text-center mt-2">
+        <img src="assets/Work_6 1.png" alt="WorkDone">
+        <p class="congratsText mt-1">Congratulations !!</p>
+        <div class="d-flex justify-content-center" *ngFor="let data of paymentData">
+            <p class="transText w-50 mt-2">Transaction amount  ₹{{data.amount}}/- in the mode of {{data.paymentModeInput}} for the payee {{data.payee}} has been success</p>
+        </div>
+        <button class="mt-2 dashBoardBtn" routerLink="/dashboard">Go back to Dashboard</button>
+    </main>
+</div>

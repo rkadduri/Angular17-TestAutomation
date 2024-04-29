@@ -1,1 +1,40 @@
-<p>account-summary works!</p>
+<div class="container-fluid mb-3">
+    <div class="accordion">
+        <div class="accordion-item m-2">
+                <div class="accountSummary d-flex flex-row justify-content-between">
+                    <p class="summaryheading">Account Summary</p>
+                        <div class="form-check form-switch d-flex flex-row m-2 me-4">
+                            <p class="hide switch">Hide</p>
+                            <input class="form-check-input checkbox" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <p class="show switch">Show</p>
+                        </div>
+                  </div>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div *ngFor="let data of accountSummary" class="d-flex flex-row justify-content-between">
+                    <div>
+                        <p class="accountHeading">Account Holder Name</p>
+                         <p class="accountValues">{{accountUserName}}</p>
+                    </div>
+                     <div>
+                         <p class="accountHeading">Account Type</p>
+                         <p class="accountValues">{{data.AccountType}}</p>
+                     </div>
+                     <div>
+                         <p class="accountHeading">Account Number</p>
+                         <p class="accountValues">{{data.AccountNumber}}</p>
+                     </div>
+                     <div>
+                         <p class="accountHeading">Account Branch</p>
+                         <p class="accountValues">{{data.AccountBranch}}</p>
+                     </div>
+                     <div>
+                         <p class="accountHeading">{{data.id == 3 ? "Credit Limit" : "Available Balance in Rupees"}}</p>
+                         <p class="accountValues">₹{{data.AvailableBalanceinRupees}}</p>
+                     </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
