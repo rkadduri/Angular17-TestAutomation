@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
+import { RecentTransactionComponent } from './tabSections/recent-transaction/recent-transaction.component';
+import { TransactionHistoryComponent } from './tabSections/transaction-history/transaction-history.component';
+import { AccountStatementComponent } from './tabSections/account-statement/account-statement.component';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-tabviews',
   standalone: true,
-  imports: [],
+  imports: [RecentTransactionComponent,TransactionHistoryComponent,AccountStatementComponent,NgStyle,NgClass],
   templateUrl: './tabviews.component.html',
   styleUrl: './tabviews.component.css'
 })
