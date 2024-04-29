@@ -1,1 +1,112 @@
-<p>select-biller works!</p>
+<div class="container-fluid mt-4 mb-4">
+    <div class="card">
+      <div class="card-header">
+        Select Biller
+      </div>
+      <form [formGroup]="form">
+        <div class="card-body">
+          <!-- Existing form elements -->
+          <div class="d-flex flex-row">
+            <label for="id_select" class="sub-text ps-5">Select Billers for</label>
+            <select id="id_select" class="transferInputs selectBiller" formControlName="billerType" autofocus>
+              <option id="biller" [value]="option" *ngFor="let option of selectOptions">{{option}}</option>
+            </select>
+          </div>
+          <div class="d-flex p-2">
+            <p class="bold-text mt-5">Biller Details</p>
+          </div>
+          <div class="d-flex" *ngIf="!showRechargeForm">
+            <label for="id_select" class="sub-text ps-5"> Biller Details </label>
+           <select id="id_select" class="transferInputs cre-card" formControlName="billerdetails" autofocus="true">
+                <option [value]="data" *ngFor="let data of biller" id="billerDetails">{{data}}</option>
+           </select>
+           </div>
+          <div class="d-flex mt-5" *ngIf="!showRechargeForm">
+            <label for="id_select" class="sub-text mt-2 ps-5"> Bill Amount</label>
+            <div class="d-flex flex-column">
+              <input type="text" class="transferInputs billDetails" formControlName="billDetailsAmount" maxlength="5"  (keypress)="onKeyPress($event)">
+              <div *ngIf="form.get('billDetailsAmount')?.hasError('required') && form.get('billDetailsAmount')?.touched" class="text-danger error-txt">
+                  <p>Enter Amount</p>
+              </div>
+            </div>
+            <div class="d-flex flex-row justify-content-between dueDate">
+              <div>
+                <p class="sub-text">Due Date</p>
+              </div>
+              <div class="ps-4">
+                <p class="savingsAccNumber">{{dueDate | date}}</p>
+                <p class="balance">Min Balance - 18405.00</p>
+              </div>
+            </div>
+            </div>
+          <!-- Conditional Mobile Recharge Form -->
+          <form *ngIf="showRechargeForm" [formGroup]="rechargeForm" class="mt-4" #formElement>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="sub-text mt-2 ps-5">Network provider</label>
+                <select class="transferInputs cre-card" formControlName="networkProvider">
+                  <option id="network" [value]="provider" *ngFor="let provider of networkProviders">{{provider}}</option>
+                </select>
+                <label class="sub-text mt-5 ps-5 me-4">Mobile number</label>
+                <input type="text" class="transferInputs cre-card" formControlName="mobileNumber" (keypress)="onKeyPress($event)" maxlength="10" minlength="10" placeholder="Enter Mobile Number" aria-autocomplete="list">
+                <div *ngIf="rechargeForm.get('mobileNumber')?.hasError('required') && rechargeForm.get('mobileNumber')?.touched" class="error text-danger">
+                    Enter Mobile Number
+                </div>
+                <div *ngIf="rechargeForm.get('mobileNumber')?.hasError('pattern') || rechargeForm.get('mobileNumber')?.hasError('minlength')" class="error text-danger">
+                  Enter Valid Mobile Number
+              </div>
+              </div>
+            </div>
+            
+            <div class="d-flex flex-row mt-5">
+              <label for="id_select" class="sub-text ps-5">Recharge amount</label>
+              <div class="d-flex flex-column">
+                <input type="text" class="transferInputs cre-card"  placeholder="Enter amount" formControlName="amount" (keypress)="onKeyPress($event)" maxlength="5">
+                <div *ngIf="rechargeForm.get('amount')?.hasError('required') && rechargeForm.get('amount')?.touched" class="error-txt text-danger">
+                      Enter Amount
+              </div>
+              </div>
+               <div *ngIf="isDueDateDisabled" class="d-flex flex-row justify-content-between dueDate">
+                  <div>
+                    <p class="sub-text">Due Date</p>
+                  </div>
+                  <div class="ps-4">
+                    <p class="savingsAccNumber">{{dueDate | date}}</p>
+                    <p class="balance">Min Balance - 18405.00</p>
+                  </div>
+                </div>
+              </div>
+            
+            <!-- Add more fields or information as needed -->
+          </form>
+            <div class="d-flex">
+              <p class="bold-text mt-5">Payment Details</p>
+            </div>
+            <div class="d-flex">
+              <label for="id_select" class="sub-text mt-2 ps-5"> Paying From</label>
+              <select id="id_select" class="transferInputs billerCard" autofocus="true" formControlName="PayingFrom">
+                   <option value="Savings Account" id="savings">Savings Account</option>
+              </select>
+              <div class="d-flex flex-row justify-content-between dueDate">
+                <div>
+                  <p class="sub-text">Account Details</p>
+                </div>
+                <div class="ps-4">
+                  <p class="savingsAccNumber">Savings - 12345678910111213</p>
+                  <p class="balance">Balance - ₹ {{availBalance}}/-</p>
+                </div>
+              </div>
+             
+            </div>
+          <!-- Continue with the rest of your form -->
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+            <button class="cancelAndSaveBtn me-2" routerLink="/dashboard">Back</button>
+            <button class="cancelAndSaveBtn ms-3"  (click)="onCancel()">Cancel</button>
+            <!-- Adjust the condition for disabling the Pay button as necessary -->
+            <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="form.invalid && (!showRechargeForm || rechargeForm.invalid)" (click)="onSubmit()">Pay</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

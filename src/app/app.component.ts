@@ -13,11 +13,13 @@ import { MultipleAccountsComponent } from './dashboard/account-details/multiple-
 import { AccountStatementComponent } from './dashboard/account-details/tabviews/tabSections/account-statement/account-statement.component';
 import { RecentTransactionComponent } from './dashboard/account-details/tabviews/tabSections/recent-transaction/recent-transaction.component';
 import { TransactionHistoryComponent } from './dashboard/account-details/tabviews/tabSections/transaction-history/transaction-history.component';
+import { LoginComponent } from './userdata/login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LoginComponent,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,22 @@
+.or-devider {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #DCDCDC;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+.btn-primary,.btn-primary:active{
+    border: 1px solid #453985 !important;
+    background: #453985;
+
+}
+
+input[type=text][type=password]{
+    border: 1px solid #525252
+}
+body{
+    overflow: hidden;
+}
+.cursor-pointer{
+    cursor: pointer;
+  }

@@ -1,0 +1,17 @@
+.btn-primary {
+    border: 1px solid #453985 !important;
+    background: #453985;
+
+}
+body{
+    overflow-x: hidden;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+.error-txt{
+    font-size: 14px;
+    font-weight: bold;
+  }

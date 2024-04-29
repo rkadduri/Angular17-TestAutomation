@@ -1,0 +1,48 @@
+.form-check-input:checked{
+    width: 20px;
+    height: 20px;
+    top: 402px;
+    left: 590px;
+    gap: 0px;
+    border-radius: 2px 0px 0px 0px;
+    opacity: 0px;
+    background-color:#082341 ;
+    border-color: #082341;
+}
+.btn-primary,.btn-primary:active {
+    border: 1px solid #453985 !important;
+    background: #453985;
+}
+
+.form-check-input:focus{
+    border: 0px !important;
+}
+.selectBiller{
+    margin-left: 50px;
+    font-size: 12px;
+}
+.cre-card{
+    margin-left: 70px;
+    font-size: 12px;
+}
+.billDetails{
+    margin-left: 80px;
+    font-size: 12px;
+}
+.billerCard{
+    margin-left: 65px;
+    font-size: 12px;
+}
+.dueDate{
+    margin-left: 100px;
+}
+.error-txt{
+    font-weight: bold;
+    padding-left: 80px;
+    padding-top: 5px;
+}
+.error{
+    padding-left: 252px;
+    font-weight: bold;
+    padding-top: 3px;
+}
