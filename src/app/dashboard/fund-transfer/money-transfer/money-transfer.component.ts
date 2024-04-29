@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BankingdataService } from '../../../bankingdata.service';
@@ -9,7 +9,7 @@ import { AddpayeeComponent } from '../addpayee/addpayee.component';
 @Component({
   selector: 'app-money-transfer',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,AddpayeeComponent],
+  imports: [ReactiveFormsModule,AddpayeeComponent,CurrencyPipe],
   templateUrl: './money-transfer.component.html',
   styleUrl: './money-transfer.component.css'
 })

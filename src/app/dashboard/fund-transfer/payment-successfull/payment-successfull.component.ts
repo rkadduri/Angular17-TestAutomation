@@ -7,7 +7,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-payment-successfull',
   standalone: true,
-  imports: [NavbarComponent,CommonModule,RouterLink,RouterOutlet],
+  imports: [NavbarComponent,RouterLink,RouterOutlet],
   templateUrl: './payment-successfull.component.html',
   styleUrl: './payment-successfull.component.css'
 })

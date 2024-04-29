@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-account-statement',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,DatePipe],
   templateUrl: './account-statement.component.html',
   styleUrl: './account-statement.component.css'
 })

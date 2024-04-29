@@ -1,12 +1,14 @@
-<div class="d-flex justify-content-center mt-2" *ngIf="!isloaded">
+<div class="container-fluid">
+  @if (isloaded) {
+  <app-account-holder-details></app-account-holder-details>
+  <app-multiple-accounts></app-multiple-accounts>
+  <app-account-summary></app-account-summary>
+  <app-tabviews></app-tabviews>
+  }@else{
+  <div class="d-flex justify-content-center mt-2">
     <div class="spinner-border" role="status">
       <span class="visually-hidden"></span>
     </div>
   </div>
-<div class="container-fluid" *ngIf="isloaded">
-    <app-account-holder-details></app-account-holder-details>
-    <app-multiple-accounts></app-multiple-accounts>
-    <app-account-summary></app-account-summary>
-    <app-tabviews></app-tabviews>
+  }
 </div>
-  

@@ -27,7 +27,9 @@
         <div class="d-flex ">
           <label class="lablespace me-2 mb-3 ms-2 balance lblText"><p>Select</p></label>
           <select class="form-select Field inputBox" name="duration" id="duration" (change)="onSelectStatementPeriod($event)">
-            <option *ngFor="let eachday of statementPeriod" [value]="eachday">{{ eachday }}</option>
+            @for (eachday of statementPeriod; track $index) {
+              <option [value]="eachday">{{ eachday }}</option>
+            }
           </select>
         </div>
       </div>
@@ -37,7 +39,10 @@
         <div class="d-flex justify-content-center ms-4">
           <label class="lableTextSpace me-2 mt-2 ms-3 balance lblText"><p>Select</p></label>
           <select class="form-select Field inputBox" name="downloadFile" id="downloadFile" (change)="onSelectStatementFormat($event)">
-            <option *ngFor="let opt of statementFormats" [value]="opt">{{ opt }}</option>
+            @for (opt of statementFormats; track $index) {
+              <option  [value]="opt">{{ opt }}</option>
+            }
+            
           </select>
         </div>
       </div>
