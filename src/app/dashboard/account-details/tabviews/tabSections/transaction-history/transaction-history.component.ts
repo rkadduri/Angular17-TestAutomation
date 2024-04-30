@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-transaction-history',
   standalone: true,
-  imports: [FormsModule,DatePipe,CommonModule],
+  imports: [FormsModule,DatePipe,NgStyle],
   templateUrl: './transaction-history.component.html',
   styleUrl: './transaction-history.component.css'
 })

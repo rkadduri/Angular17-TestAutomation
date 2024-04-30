@@ -6,7 +6,7 @@ import { recent } from '../../../../../modal';
 @Component({
   selector: 'app-recent-transaction',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './recent-transaction.component.html',
   styleUrl: './recent-transaction.component.css'
 })

@@ -5,7 +5,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 @Component({
   selector: 'app-account-holder-details',
   standalone: true,
-  imports: [DatePipe,CommonModule],
+  imports: [DatePipe],
   templateUrl: './account-holder-details.component.html',
   styleUrl: './account-holder-details.component.css'
 })

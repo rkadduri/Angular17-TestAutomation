@@ -17,10 +17,14 @@
                             <label class="sub-text transferDetails">To<span class="text-danger">*</span></label>
                            <div class="d-flex flex-row senderOption">
                                 <select class="transferInputs ms-5" formControlName="payee" required>
-                                    <option *ngFor="let payee of payeeNames" [value]="payee">{{payee}}</option>
+                                    @for (payee of payeeNames; track $index) {
+                                        <option [value]="payee">{{payee}}</option>
+                                    }
                                 </select>
-                                <div *ngIf="payeeName">
-                                    <p class="text-danger">Please Select Payee</p>
+                                <div>
+                                    @if (payeeName) {
+                                        <p class="text-danger">Please Select Payee</p>
+                                    }
                                 </div>
                                 <p class="or">or</p>
                                 <button class="addPayeeBtn cancelAndSaveBtn" (click)="openAddpayeePopup(copyContent)">ADD PAYEE</button>
@@ -35,11 +39,15 @@
                                 <div class="form-group mt-3">
                                     <label class="acc-number transferDetails">Account Number<span class="text-danger">*</span></label>
                                     <input type="text" placeholder="Enter Account Number" class="transferInputs ms-5" formControlName="accountNumber" maxlength="18" (keypress)="onKeyPress($event)">
-                                    <div *ngIf="moneyTransferForm.get('accountNumber')?.hasError('required') && moneyTransferForm.get('accountNumber')?.touched" class="text-danger">
-                                        <p class="error-msg">Please Enter Account Number</p>
+                                    <div class="text-danger">
+                                        @if (moneyTransferForm.get('accountNumber')?.hasError('required') && moneyTransferForm.get('accountNumber')?.touched) {
+                                            <p class="error-msg">Please Enter Account Number</p>
+                                        }
                                     </div>
-                                    <div *ngIf="moneyTransferForm.get('accountNumber')?.hasError('pattern') || moneyTransferForm.get('accountNumber')?.hasError('minlength')" class="text-danger">
-                                        <p class="error-msg">Account Number must be atleast 8 characters</p>
+                                    <div class="text-danger">
+                                        @if (moneyTransferForm.get('accountNumber')?.hasError('pattern') || moneyTransferForm.get('accountNumber')?.hasError('minlength')) {
+                                            <p class="error-msg">Account Number must be atleast 8 characters</p>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -47,11 +55,16 @@
                                 <div class="form-group mt-3">
                                     <label class="bold-text">Re- Enter Account Number<span class="text-danger">*</span></label>
                                     <input type="text" class="transferInputs reAccNoAndRemarks" placeholder="Enter Account Number" formControlName="reEnterAccountNo" required maxlength="18" (keypress)="onKeyPress($event)">
-                                    <div *ngIf="moneyTransferForm.get('reEnterAccountNo')?.hasError('required') && moneyTransferForm.get('reEnterAccountNo')?.touched" class="text-danger">
-                                           <p class="error-msg"> Please Enter Account Number</p>
+                                    <div class="text-danger">
+                                        @if (moneyTransferForm.get('reEnterAccountNo')?.hasError('required') && moneyTransferForm.get('reEnterAccountNo')?.touched) {
+                                            <p class="error-msg"> Please Enter Account Number</p>
+                                        }    
                                     </div>
-                                    <div *ngIf="moneyTransferForm.hasError('mismatch') && moneyTransferForm.get('reEnterAccountNo')?.touched" class="text-danger">
-                                        <p class="error-msg"> Account Number do not match.</p>
+                                    <div class="text-danger">
+                                        @if (moneyTransferForm.hasError('mismatch') && moneyTransferForm.get('reEnterAccountNo')?.touched) {
+                                            <p class="error-msg"> Account Number do not match.</p>
+                                        }
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -66,8 +79,11 @@
                                     <label class="sub-text transferDetails">Enter the Amount<span class="text-danger">*</span></label>
                                     <input type="text" placeholder="Enter Amount" class="transferInputs amount" formControlName="amount" required (keypress)="onKeyPress($event)" maxlength="5">
                                 </div>
-                                <div *ngIf="moneyTransferForm.get('amount')?.hasError('required') && moneyTransferForm.get('amount')?.touched">
-                                    <p class="error-msg">Please Enter Amount</p>
+                                <div>
+                                    @if (moneyTransferForm.get('amount')?.hasError('required') && moneyTransferForm.get('amount')?.touched) {
+                                        <p class="error-msg">Please Enter Amount</p>
+                                    }
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -75,8 +91,10 @@
                                     <label class="bold-text">Remarks for transaction<span class="text-danger">*</span></label>
                                     <input type="text" placeholder="Please write here" class="transferInputs reAccNoAndRemarks remarks" formControlName="remarks"  maxlength="10">
                                 </div>
-                                <div *ngIf="moneyTransferForm.get('remarks')?.hasError('required') && moneyTransferForm.get('remarks')?.touched">
-                                    <p class="error-msg">Please Enter Remarks</p>
+                                <div>
+                                    @if (moneyTransferForm.get('remarks')?.hasError('required') && moneyTransferForm.get('remarks')?.touched) {
+                                        <p class="error-msg">Please Enter Remarks</p>
+                                    }
                                 </div>
                             </div>
                         </div>

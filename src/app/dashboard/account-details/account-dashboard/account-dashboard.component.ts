@@ -4,11 +4,12 @@ import { MultipleAccountsComponent } from '../multiple-accounts/multiple-account
 import { AccountSummaryComponent } from '../account-summary/account-summary.component';
 import { TabviewsComponent } from '../tabviews/tabviews.component';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-account-dashboard',
   standalone: true,
-  imports: [AccountHolderDetailsComponent,MultipleAccountsComponent,AccountSummaryComponent,TabviewsComponent,CommonModule],
+  imports: [AccountHolderDetailsComponent,MultipleAccountsComponent,AccountSummaryComponent,TabviewsComponent,NavbarComponent],
   templateUrl: './account-dashboard.component.html',
   styleUrl: './account-dashboard.component.css'
 })

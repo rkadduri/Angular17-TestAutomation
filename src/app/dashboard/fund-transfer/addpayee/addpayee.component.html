@@ -12,11 +12,15 @@
                         <label class="payee-details mt-1">Payee Full Name<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs" id="fullname" formControlName="fullname" maxlength="15">
                     </div>
-                    <div *ngIf="addPayeeForm.get('fullname')?.hasError('required') && addPayeeForm.get('fullname')?.touched" class="text-danger">
-                        <p class="error-text"> Please Enter Fullname</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('fullname')?.hasError('required') && addPayeeForm.get('fullname')?.touched) {
+                            <p class="error-text"> Please Enter Fullname</p>
+                        }
                     </div>
-                    <div *ngIf="addPayeeForm.get('fullname')?.hasError('pattern') || addPayeeForm.get('fullname')?.hasError('minlength')" class="text-danger">
-                        <p class="error-text">Full Name must be alphabetical and should contain atleast 3 characters</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('fullname')?.hasError('pattern') || addPayeeForm.get('fullname')?.hasError('minlength')) {
+                            <p class="error-text">Full Name must be alphabetical and should contain atleast 3 characters</p>
+                        }
                     </div>
                 </div>
 
@@ -25,11 +29,17 @@
                         <label class="payee-details mt-1">Payee Nickname<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs" id="nickname" formControlName="nickname" maxlength="15">
                     </div>
-                    <div *ngIf="addPayeeForm.get('nickname')?.hasError('required') && addPayeeForm.get('nickname')?.touched" class="text-danger">
-                        <p class="error-text"> Please Enter Nickname</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('nickname')?.hasError('required') && addPayeeForm.get('nickname')?.touched) {
+                            <p class="error-text"> Please Enter Nickname</p>
+                        }
+                        
                     </div>
-                    <div *ngIf="addPayeeForm.get('nickname')?.hasError('pattern') || addPayeeForm.get('nickname')?.hasError('minlength')" class="text-danger">
-                        <p class="error-text">Nick Name must be alphabetical and should contain atleast 3 characters</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('nickname')?.hasError('pattern') || addPayeeForm.get('nickname')?.hasError('minlength')) {
+                            <p class="error-text">Nick Name must be alphabetical and should contain atleast 3 characters</p>
+                        }
+
                     </div>
                 </div>
 
@@ -41,11 +51,17 @@
                         <label class="payee-details mt-1">Bank Name<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs" id="bankName" formControlName="bankName" minlength="3" maxlength="20">
                     </div>
-                    <div *ngIf="addPayeeForm.get('bankName')?.hasError('required') && addPayeeForm.get('bankName')?.touched" class="text-danger">
-                        <p class="error-text"> Please Enter Bank Name </p>
+                    <div class="text-danger">
+                        @if(addPayeeForm.get('bankName')?.hasError('required') && addPayeeForm.get('bankName')?.touched){
+                            <p class="error-text"> Please Enter Bank Name </p>
+                        }
+                        
                     </div>
-                    <div *ngIf="addPayeeForm.get('bankName')?.hasError('pattern') || addPayeeForm.get('bankName')?.hasError('minlength')" class="text-danger">
-                        <p class="error-text">Bank Name must be alphabetical and should contain atleast 3 characters</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('bankName')?.hasError('pattern') || addPayeeForm.get('bankName')?.hasError('minlength')) {
+                            <p class="error-text">Bank Name must be alphabetical and should contain atleast 3 characters</p>
+                        }
+                        
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -53,11 +69,17 @@
                         <label class="payee-details mt-1">IFSC Code<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs ifscCode" id="ifscCode" formControlName="ifscCode" maxlength="11">
                     </div>
-                    <div *ngIf="addPayeeForm.get('ifscCode')?.hasError('required') && addPayeeForm.get('ifscCode')?.touched" class="text-danger">
-                        <p class="error-text"> Please Enter IFSC Code</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('ifscCode')?.hasError('required') && addPayeeForm.get('ifscCode')?.touched) {
+                            <p class="error-text"> Please Enter IFSC Code</p>
+                        }
+                        
                     </div>
-                    <div *ngIf="addPayeeForm.get('ifscCode')?.hasError('pattern') || addPayeeForm.get('ifscCode')?.hasError('maxlength')" class="text-danger">
-                        <p class="error-text"> IFSC Code must be atleast 11 alphanumerical characters</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('ifscCode')?.hasError('pattern') || addPayeeForm.get('ifscCode')?.hasError('maxlength')) {
+                            <p class="error-text"> IFSC Code must be atleast 11 alphanumerical characters</p>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -67,11 +89,17 @@
                         <label class="payee-details mt-1">Account Number<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs" id="accountNo" formControlName="accountNo" maxlength="18" (keypress)="onKeyPress($event)">
                     </div>
-                    <div *ngIf="addPayeeForm.get('accountNo')?.hasError('required') && addPayeeForm.get('accountNo')?.touched" class="text-danger">
-                        <p class="error-text"> Please Enter Account Number</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('accountNo')?.hasError('required') && addPayeeForm.get('accountNo')?.touched) {
+                            <p class="error-text"> Please Enter Account Number</p>
+                        }
+                        
                     </div>
-                    <div *ngIf="addPayeeForm.get('accountNo')?.hasError('pattern') || addPayeeForm.get('accountNo')?.hasError('minlength')" class="text-danger">
-                        <p class="error-text"> Account Number must be numerical and atleast 8 digits</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('accountNo')?.hasError('pattern') || addPayeeForm.get('accountNo')?.hasError('minlength')) {
+                            <p class="error-text"> Account Number must be numerical and atleast 8 digits</p>
+                        }
+                        
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -79,11 +107,17 @@
                         <label class="payee-details mt-1">Re-Enter Account Number<span class="text-danger">*</span></label>
                         <input type="text" class="transferInputs" id="reEnterAccNo" formControlName="reEnteraccountNo" (keypress)="onKeyPress($event)" maxlength="18">
                     </div>
-                    <div *ngIf="addPayeeForm.get('reEnteraccountNo')?.hasError('required') && addPayeeForm.get('reEnteraccountNo')?.touched" class="text-danger">
-                        <p class="error-text"> Please Re-Enter Account Number</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.get('reEnteraccountNo')?.hasError('required') && addPayeeForm.get('reEnteraccountNo')?.touched) {
+                            <p class="error-text"> Please Re-Enter Account Number</p>
+                        }
+
                     </div>
-                    <div *ngIf="addPayeeForm.hasError('mismatch') && addPayeeForm.get('reEnteraccountNo')?.touched" class="text-danger">
-                        <p class="error-text"> Account Number do not match.</p>
+                    <div class="text-danger">
+                        @if (addPayeeForm.hasError('mismatch') && addPayeeForm.get('reEnteraccountNo')?.touched) {
+                            <p class="error-text"> Account Number do not match.</p>
+                        }
+                       
                     </div>
                 </div>
             </div>

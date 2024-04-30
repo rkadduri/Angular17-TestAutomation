@@ -5,7 +5,7 @@ import { BankingdataService } from '../../../bankingdata.service';
 @Component({
   selector: 'app-account-summary',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './account-summary.component.html',
   styleUrl: './account-summary.component.css'
 })

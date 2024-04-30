@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-multiple-accounts',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgStyle],
   templateUrl: './multiple-accounts.component.html',
   styleUrl: './multiple-accounts.component.css'
 })

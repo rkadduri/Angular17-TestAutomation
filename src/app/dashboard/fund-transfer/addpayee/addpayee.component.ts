@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-addpayee',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './addpayee.component.html',
   styleUrl: './addpayee.component.css'
 })

@@ -1,13 +1,2 @@
-<!-- <app-account-dashboard></app-account-dashboard> -->
-<!-- <app-navbar></app-navbar> -->
-<!-- <app-money-transfer></app-money-transfer> -->
-<!-- <app-addpayee></app-addpayee> -->
-<!-- <app-payment-successfull></app-payment-successfull> -->
-<!-- <app-transfer-account-summary></app-transfer-account-summary> -->
-<!-- <app-transfer-dashboard></app-transfer-dashboard> -->
-<!-- <app-fund-transfer></app-fund-transfer> -->
-<!-- <app-account-summary></app-account-summary> -->
-<!-- <app-multiple-accounts></app-multiple-accounts> -->
-<!-- <app-account-statement></app-account-statement> -->
-<!-- <app-recent-transaction></app-recent-transaction> -->
-<!-- <app-transaction-history></app-transaction-history> -->
+<app-navbar *ngIf="!showNavbar"></app-navbar>
+<router-outlet></router-outlet>
