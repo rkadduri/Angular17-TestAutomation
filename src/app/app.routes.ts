@@ -4,11 +4,11 @@ import { RegistrationComponent } from './userdata/registration/registration.comp
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountDashboardComponent } from './dashboard/account-details/account-dashboard/account-dashboard.component';
 import { AddpayeeComponent } from './dashboard/fund-transfer/addpayee/addpayee.component';
-import { PaymentSuccessfullComponent } from './dashboard/fund-transfer/payment-successfull/payment-successfull.component';
 import { TransferDashboardComponent } from './dashboard/fund-transfer/transfer-dashboard/transfer-dashboard.component';
 import { PaymentDashboardComponent } from './dashboard/payments/payment-dashboard/payment-dashboard.component';
 import { PaymentSuccessComponent } from './dashboard/payments/payment-success/payment-success.component';
 import { ForgotInfoComponent } from './userdata/forgot-info/forgot-info.component';
+import { TransferSuccessfullComponent } from './dashboard/fund-transfer/transfer-successfull/transfer-successfull.component';
 
 export const routes: Routes = [
     {path: '', component:LoginComponent},
@@ -21,6 +21,6 @@ export const routes: Routes = [
     {path:"paymentDashboard",component:PaymentDashboardComponent},
     {path:'transferDashboard',component:TransferDashboardComponent},
     {path:'addpayee',component:AddpayeeComponent},
-    {path:'paymentsuccess',component:PaymentSuccessfullComponent},
-    {path:'payment',component:PaymentSuccessComponent}
+    {path:'transferSuccess',component:TransferSuccessfullComponent},
+    {path:'paymentSuccess',component:PaymentSuccessComponent}
 ];

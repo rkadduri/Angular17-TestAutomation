@@ -7,8 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-select-biller',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterOutlet,RouterLink],
-  providers:[BankingdataService],
+  imports: [CommonModule,ReactiveFormsModule,RouterLink],
   templateUrl: './select-biller.component.html',
   styleUrl: './select-biller.component.css'
 })
@@ -65,7 +64,7 @@ export class SelectBillerComponent {
       console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = false;
       this.service.balance -= billValue
-      this.route.navigate(['/payment'])
+      this.route.navigate(['/paymentSuccess'])
     }
     if (this.rechargeForm.valid && rechargeBillValue <= this.availBalance) {
       console.log("Recharge Form")
@@ -74,7 +73,7 @@ export class SelectBillerComponent {
       console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = true;
       this.service.balance -= rechargeBillValue
-      this.route.navigate(['/payment'])
+      this.route.navigate(['/paymentSuccess'])
     }
     if(this.billerForm.value.billDetailsAmount > this.availBalance || this.rechargeForm.value.amount > this.availBalance){
       alert("InSufficient Funds")

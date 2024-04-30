@@ -8,7 +8,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   selector: 'app-payment-success',
   standalone: true,
   imports: [NavbarComponent,CommonModule,RouterLink],
-  providers:[BankingdataService],
   templateUrl: './payment-success.component.html',
   styleUrl: './payment-success.component.css'
 })
