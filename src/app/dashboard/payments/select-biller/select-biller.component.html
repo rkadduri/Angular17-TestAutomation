@@ -3,7 +3,7 @@
     <div class="card-header">
       Select Biller
     </div>
-    <form [formGroup]="billerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="billerForm">
       <div class="card-body">
         <!-- Existing form elements -->
         <div class="d-flex flex-row">
@@ -107,10 +107,7 @@
           </div>
           }
         </form>
-       
-          
-          
-          <!-- Add more fields or information as needed -->
+       <!-- Add more fields or information as needed -->
           <div class="d-flex">
             <p class="bold-text mt-5">Payment Details</p>
           </div>
@@ -135,7 +132,7 @@
           <button class="cancelAndSaveBtn me-2" routerLink="/dashboard">Back</button>
           <button class="cancelAndSaveBtn ms-3"  (click)="onCancel()">Cancel</button>
           <!-- Adjust the condition for disabling the Pay button as necessary -->
-          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="billerForm.invalid && (!showRechargeForm || rechargeForm.invalid)">Pay</button>
+          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="billerForm.invalid && (!showRechargeForm || rechargeForm.invalid)" (click)="onSubmit()">Pay</button>
         </div>
       </div>
     </form>
