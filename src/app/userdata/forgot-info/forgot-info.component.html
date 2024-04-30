@@ -31,19 +31,29 @@
 						@if (myForm.get('password')?.hasError('required') && myForm.get('password')?.touched) {
 							<p class="text-danger error-txt">Password is required.</p>
 						}
-						<div *ngIf="myForm.get('password')?.hasError('minlength') || myForm.get('password')?.hasError('pattern')" class="text-danger error-txt">
+						<!-- <div *ngIf="myForm.get('password')?.hasError('minlength') || myForm.get('password')?.hasError('pattern')" class="text-danger error-txt">
 							Password must be at least 8 characters long and atleast one capital letter.
-						</div>
+						</div> -->
+						@if (myForm.get('password')?.hasError('minlength') || myForm.get('password')?.hasError('pattern')) {
+							<p class="text-danger error-txt">Password must be at least 8 characters long and atleast one capital letter.</p>
+						}
 					</div>
 					<div class="form-group">
 						<label>Confirm Password<span class="text-danger">*</span></label>
 						<input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword">
-						<div *ngIf="myForm.get('confirmPassword')?.hasError('required') && myForm.get('confirmPassword')?.touched" class="text-danger error-txt">
+						<!-- <div *ngIf="myForm.get('confirmPassword')?.hasError('required') && myForm.get('confirmPassword')?.touched" class="text-danger error-txt">
 							Confirm password is required.
-						</div>
-						<div *ngIf="myForm.hasError('mismatch')" class="text-danger error-txt">
+						</div> -->
+						@if (myForm.get('confirmPassword')?.hasError('required') && myForm.get('confirmPassword')?.touched) {
+							<p class="text-danger error-txt">Confirm password is required.</p>
+						}
+
+						<!-- <div *ngIf="myForm.hasError('mismatch')" class="text-danger error-txt">
 							Passwords do not match.
-						</div>
+						</div> -->
+						@if (myForm.hasError('mismatch')) {
+							<p class="text-danger error-txt">Passwords do not match.</p>
+						}
 					</div>
 						</div>
 						<div class="col-md-4"></div>
