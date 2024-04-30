@@ -2,14 +2,14 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BankingdataService } from '../../../bankingdata.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddpayeeComponent } from '../addpayee/addpayee.component';
 
 @Component({
   selector: 'app-money-transfer',
   standalone: true,
-  imports: [ReactiveFormsModule,AddpayeeComponent,CurrencyPipe],
+  imports: [ReactiveFormsModule,AddpayeeComponent,CurrencyPipe,RouterLink],
   templateUrl: './money-transfer.component.html',
   styleUrl: './money-transfer.component.css'
 })

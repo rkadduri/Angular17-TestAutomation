@@ -6,15 +6,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from '../../app.routes';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
+  let router:Router
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoginComponent],
-      imports: [ReactiveFormsModule,HttpClientModule,RouterTestingModule],
+      // declarations: [DashboardComponent],
+      imports: [ReactiveFormsModule,HttpClientModule,RouterTestingModule.withRoutes(routes)],
       providers:[Router]
     })
     .compileComponents();
@@ -22,7 +26,7 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    // router = TestBed.inject(Router);
+    router = TestBed.inject(Router);
   });
 
   it('should create', () => {
@@ -78,5 +82,16 @@ describe('LoginComponent', () => {
     // Expect that the openForgotPasswordPopup method was called
     expect(component.openForgotPasswordPopup).toHaveBeenCalled();
   });
+
+  xit('navigate to dashboard when login button is clicked',()=>{
+     spyOn(router,'navigate')
+   
+    // expect(spy).toHaveBeenCalled();
+    let loginBtn = fixture.nativeElement.querySelector('#login');
+    console.log(loginBtn)
+    loginBtn.disabled = false
+    loginBtn.click()
+    expect(router.navigate).toEqual('/dashboard')
+  })
   });
 

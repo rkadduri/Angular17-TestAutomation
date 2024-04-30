@@ -19,6 +19,8 @@ export class PaymentSuccessComponent{
  
   constructor(private service:BankingdataService){}
   recharge:boolean = this.service.rechargePaymentSuccess
+
+  
   ngOnInit(){
     console.log(this.service.selectBillerSuccess)
     this.selectBillerPayment =  this.service.selectBillerSuccess;

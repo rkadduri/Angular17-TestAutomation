@@ -3,35 +3,47 @@
     <div class="card-header">
       Select Biller
     </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="billerForm" (ngSubmit)="onSubmit()">
       <div class="card-body">
         <!-- Existing form elements -->
         <div class="d-flex flex-row">
           <label for="id_select" class="sub-text ps-5">Select Billers for</label>
           <select id="id_select" class="transferInputs selectBiller" formControlName="billerType" autofocus>
-            <option id="biller" [value]="option" *ngFor="let option of selectOptions">{{option}}</option>
+            @for(option of selectOptions;track $index){
+              <option id="biller" [value]="option">{{option}}</option>
+            }
+            
           </select>
         </div>
         <div class="d-flex p-2">
           <p class="bold-text mt-5">Biller Details</p>
         </div>
-        <div class="d-flex" *ngIf="!showRechargeForm">
-          <label for="id_select" class="sub-text ps-5"> Biller Details </label>
-         <select id="id_select" class="transferInputs cre-card" formControlName="billerdetails" autofocus="true">
-              <option [value]="data" *ngFor="let data of biller" id="billerDetails">{{data}}</option>
-         </select>
+        <div class="d-flex">
+          @if(!showRechargeForm){
+            <div>
+               <label for="id_select" class="sub-text ps-5"> Biller Details </label>
+           <select id="id_select" class="transferInputs cre-card" formControlName="billerdetails" autofocus="true">
+            @for (data of biller; track $index) {
+              <option [value]="data" id="billerDetails">{{data}}</option>
+            }
+              
+            </select>
+            </div>
+            
+          }
          </div>
-        <div class="d-flex mt-5" *ngIf="!showRechargeForm">
-          <label for="id_select" class="sub-text mt-2 ps-5"> Bill Amount</label>
-          <div class="d-flex flex-column">
-            <input type="text" class="transferInputs billDetails" formControlName="billDetailsAmount" maxlength="5"  (keypress)="onKeyPress($event)">
-            <div  class="text-danger error-txt">
-              @if(form.get('billDetailsAmount')?.hasError('required') && form.get('billDetailsAmount')?.touched){
-                <p>Enter Amount</p>
-              }
-             </div>
-          </div>
-          <div class="d-flex flex-row justify-content-between dueDate">
+         <div class="d-flex mt-5">
+            @if(!showRechargeForm){
+              <label for="id_select" class="sub-text mt-2 ps-5"> Bill Amount</label>
+            <div class="d-flex flex-column">
+                <input type="text" class="transferInputs billDetails" formControlName="billDetailsAmount" maxlength="5"  (keypress)="onKeyPress($event)">
+                <div  class="text-danger error-txt">
+                   @if(billerForm.get('billDetailsAmount')?.hasError('required') && billerForm.get('billDetailsAmount')?.touched){
+                    <p>Enter Amount</p>
+                   }
+                 </div>
+            </div>
+           <div class="d-flex flex-row justify-content-between dueDate">
             <div>
               <p class="sub-text">Due Date</p>
             </div>
@@ -40,53 +52,65 @@
               <p class="balance">Min Balance - 18405.00</p>
             </div>
           </div>
+            }
           </div>
         <!-- Conditional Mobile Recharge Form -->
-        <form *ngIf="showRechargeForm" [formGroup]="rechargeForm" class="mt-4" #formElement>
-          <div class="row">
-            <div class="col-md-6">
-              <label class="sub-text mt-2 ps-5">Network provider</label>
-              <select class="transferInputs cre-card" formControlName="networkProvider">
-                <option id="network" [value]="provider" *ngFor="let provider of networkProviders">{{provider}}</option>
-              </select>
-              <label class="sub-text mt-5 ps-5 me-4">Mobile number</label>
-              <input type="text" class="transferInputs cre-card" formControlName="mobileNumber" (keypress)="onKeyPress($event)" maxlength="10" minlength="10" placeholder="Enter Mobile Number" aria-autocomplete="list">
+        <form  [formGroup]="rechargeForm" class="mt-4" #formElement>
+          @if(showRechargeForm){
+            <div class="row">
+              <div class="col-md-6">
+                <label class="sub-text mt-2 ps-5">Network provider</label>
+                <select class="transferInputs cre-card" formControlName="networkProvider">
+                  @for(provider of networkProviders;track $index){
+                    <option id="network" [value]="provider">
+                           {{provider}}
+                    </option>
+                  }
+                 
+                </select>
+                <label class="sub-text mt-5 ps-5 me-4">Mobile number</label>
+                <input type="text" class="transferInputs cre-card" formControlName="mobileNumber" (keypress)="onKeyPress($event)" maxlength="10" minlength="10" placeholder="Enter Mobile Number" aria-autocomplete="list">
+                <div class="error text-danger">
+                  @if(rechargeForm.get('mobileNumber')?.hasError('required') && rechargeForm.get('mobileNumber')?.touched){
+                    <p>Enter Mobile Number</p>
+                  }
+                </div>
               <div class="error text-danger">
-                @if(rechargeForm.get('mobileNumber')?.hasError('required') && rechargeForm.get('mobileNumber')?.touched){
-                  <p>Enter Mobile Number</p>
+                @if(rechargeForm.get('mobileNumber')?.hasError('pattern') || rechargeForm.get('mobileNumber')?.hasError('minlength')){
+                  <p>Enter Valid Mobile Number</p>
                 }
               </div>
-            <div class="error text-danger">
-              @if(rechargeForm.get('mobileNumber')?.hasError('pattern') || rechargeForm.get('mobileNumber')?.hasError('minlength')){
-                <p>Enter Valid Mobile Number</p>
-              }
-            </div>
-            </div>
-          </div>
-          
-          <div class="d-flex flex-row mt-5">
-            <label for="id_select" class="sub-text ps-5">Recharge amount</label>
-            <div class="d-flex flex-column">
-              <input type="text" class="transferInputs cre-card"  placeholder="Enter amount" formControlName="amount" (keypress)="onKeyPress($event)" maxlength="5">
-            <div class="error-txt text-danger">
-              @if(rechargeForm.get('amount')?.hasError('required') && rechargeForm.get('amount')?.touched){
-                <p>Enter Amount</p>
-              }
-            </div>
-            </div>
-             <div *ngIf="isDueDateDisabled" class="d-flex flex-row justify-content-between dueDate">
-                <div>
-                  <p class="sub-text">Due Date</p>
-                </div>
-                <div class="ps-4">
-                  <p class="savingsAccNumber">{{dueDate | date}}</p>
-                  <p class="balance">Min Balance - 18405.00</p>
-                </div>
               </div>
             </div>
+            
+            <div class="d-flex flex-row mt-5">
+              <label for="id_select" class="sub-text ps-5">Recharge amount</label>
+              <div class="d-flex flex-column">
+                <input type="text" class="transferInputs cre-card"  placeholder="Enter amount" formControlName="amount" (keypress)="onKeyPress($event)" maxlength="5">
+              <div class="error-txt text-danger">
+                @if(rechargeForm.get('amount')?.hasError('required') && rechargeForm.get('amount')?.touched){
+                  <p>Enter Amount</p>
+                }
+              </div>
+              </div>
+             <div class="d-flex flex-row justify-content-between dueDate">
+                @if(isDueDateDisabled){
+                  <div>
+                    <p class="sub-text">Due Date</p>
+                  </div>
+                  <div class="ps-4">
+                    <p class="savingsAccNumber">{{dueDate | date}}</p>
+                    <p class="balance">Min Balance - 18405.00</p>
+                  </div>
+                }
+             </div>
+          </div>
+          }
+        </form>
+       
+          
           
           <!-- Add more fields or information as needed -->
-        </form>
           <div class="d-flex">
             <p class="bold-text mt-5">Payment Details</p>
           </div>
@@ -111,7 +135,7 @@
           <button class="cancelAndSaveBtn me-2" routerLink="/dashboard">Back</button>
           <button class="cancelAndSaveBtn ms-3"  (click)="onCancel()">Cancel</button>
           <!-- Adjust the condition for disabling the Pay button as necessary -->
-          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="form.invalid && (!showRechargeForm || rechargeForm.invalid)">Pay</button>
+          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="billerForm.invalid && (!showRechargeForm || rechargeForm.invalid)">Pay</button>
         </div>
       </div>
     </form>

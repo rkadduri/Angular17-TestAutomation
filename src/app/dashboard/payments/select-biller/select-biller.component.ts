@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './select-biller.component.css'
 })
 export class SelectBillerComponent {
-  form!: FormGroup;
+  billerForm!: FormGroup;
   rechargeForm: FormGroup;
   showRechargeForm: boolean = false;
   showAdditionalFields = false;
@@ -26,7 +26,7 @@ export class SelectBillerComponent {
   networkProviders = ['Airtel Post-paid', 'Airtel Pre-paid']
 
   constructor(private service: BankingdataService, private fb: FormBuilder, private route: Router) {
-    this.form = fb.group({
+    this.billerForm = fb.group({
       billerType: ['Credit Card', Validators.required],
       billerdetails: ['Credit Card', Validators.required],
       billDetailsAmount: ['', Validators.required],
@@ -40,7 +40,7 @@ export class SelectBillerComponent {
       PayingFrom: ['Savings Account']
     });
 
-    this.form.get('billerType')?.valueChanges.subscribe(val => {
+    this.billerForm.get('billerType')?.valueChanges.subscribe(val => {
       this.showRechargeForm = val === 'Mobile Recharge';
     });
 
@@ -55,18 +55,20 @@ export class SelectBillerComponent {
   }
 
   onSubmit() {
-    let billValue = this.form.value.billDetailsAmount;
+    let billValue = this.billerForm.value.billDetailsAmount;
     let rechargeBillValue = this.rechargeForm.value.amount;
     
-    if (this.form.valid && billValue <= this.availBalance) {
+    if (this.billerForm.valid && billValue <= this.availBalance) {
+      console.log("Biller Form")
       this.service.selectBillerSuccess.pop()
-      this.service.selectBillerSuccess.push(this.form.value)
+      this.service.selectBillerSuccess.push(this.billerForm.value);
       console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = false;
       this.service.balance -= billValue
       this.route.navigate(['/payment'])
     }
     if (this.rechargeForm.valid && rechargeBillValue <= this.availBalance) {
+      console.log("Recharge Form")
       this.service.selectBillerSuccess.pop()
       this.service.selectBillerSuccess.push(this.rechargeForm.value);
       console.log(this.service.selectBillerSuccess)
@@ -74,18 +76,18 @@ export class SelectBillerComponent {
       this.service.balance -= rechargeBillValue
       this.route.navigate(['/payment'])
     }
-    if(this.form.value.billDetailsAmount > this.availBalance || this.rechargeForm.value.amount > this.availBalance){
+    if(this.billerForm.value.billDetailsAmount > this.availBalance || this.rechargeForm.value.amount > this.availBalance){
       alert("InSufficient Funds")
       this.route.navigate(['/paymentDashboard'])
     }
   }
 
   onCancel() {
-    if (this.form.valid) {
+    if (this.billerForm.valid) {
       let confirmation = confirm("Are you sure you want to Cancel the Payment?")
       if (confirmation) {
-        this.form.reset();
-        this.form.patchValue({
+        this.billerForm.reset();
+        this.billerForm.patchValue({
           billerType: 'Credit Card',
           billerdetails: 'Credit Card',
           PayingFrom: 'Savings Account'

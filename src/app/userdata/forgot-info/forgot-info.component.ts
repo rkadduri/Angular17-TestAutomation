@@ -3,11 +3,12 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BankingdataService } from '../../bankingdata.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-info',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,RouterLink],
   templateUrl: './forgot-info.component.html',
   styleUrl: './forgot-info.component.css'
 })
@@ -51,7 +52,7 @@ export class ForgotInfoComponent {
       let userIndex=this.service.userData.indexOf(this.myForm.value.email);
       // console.log(userIndex+1);
       this.service.userData[userIndex+1] = this.myForm.value.password;
-      console.log('Password Changed Successfully!!');
+      alert('Password Changed Successfully!!');
       // console.log(this.myForm.value.password)
       this.closePopup();
     }

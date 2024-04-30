@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
 import { CommonModule, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-account-holder-details',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe,RouterLink],
   templateUrl: './account-holder-details.component.html',
   styleUrl: './account-holder-details.component.css'
 })

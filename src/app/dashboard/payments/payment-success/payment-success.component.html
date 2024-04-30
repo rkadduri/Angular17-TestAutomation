@@ -4,8 +4,10 @@
     <main class="mainScreen text-center mt-2">
         <img src="assets/Work_6 1.png" alt="WorkDone">
         <p class="congratsText mt-1">Congratulations !!</p>
-        <div class="d-flex justify-content-center" *ngFor="let data of selectBillerPayment">
-            <p class="transText w-50 mt-2">Transaction amount  ₹{{data.billDetailsAmount}}/- for {{data.billerType}} has been success</p>
+        <div class="d-flex justify-content-center">
+            @for(data of selectBillerPayment;track data.id ){
+                <p class="transText w-50 mt-2">Transaction amount  ₹{{data.billDetailsAmount}}/- for {{data.billerType}} has been success</p>
+            }
         </div>
         <button class="mt-2 dashBoardBtn" routerLink="/dashboard">Go back to Dashboard</button>
     </main>
@@ -16,8 +18,10 @@
     <main class="mainScreen text-center mt-2">
         <img src="assets/Work_6 1.png" alt="WorkDone">
         <p class="congratsText mt-1">Congratulations !!</p>
-        <div class="d-flex justify-content-center" *ngFor="let data of mobileRechargePayment">
-            <p class="transText w-50 mt-2">{{data.networkProvider}} Plan of ₹{{data.amount}}/- for Mobile Number {{data.mobileNumber}} has been success</p>
+        <div class="d-flex justify-content-center">
+            @for(data of mobileRechargePayment;track data.id){
+                <p class="transText w-50 mt-2">{{data.networkProvider}} Plan of ₹{{data.amount}}/- for Mobile Number {{data.mobileNumber}} has been success</p>
+            }
         </div>
         <button class="mt-2 dashBoardBtn" routerLink="/dashboard">Go back to Dashboard</button>
     </main>

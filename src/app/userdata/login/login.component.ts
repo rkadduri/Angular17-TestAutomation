@@ -50,9 +50,9 @@ export class LoginComponent {
         console.log("TrimmedString:",this.service.trimmedString);
         var name = newStr!==user ? newStr : null;
         this.loginForm.reset();
-        this.router.navigateByUrl('/dashboard')
-  
-    }else{
+        this.router.navigate(['/dashboard'])
+   }
+   else{
         this.isInvalidUser = "Please Enter Valid Credentials"
         this.loginForm.reset();
     }
