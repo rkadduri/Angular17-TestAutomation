@@ -3,6 +3,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FundTransferComponent } from './fund-transfer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { BankingdataService } from '../../bankingdata.service';
 
 describe('FundTransferComponent', () => {
   let component: FundTransferComponent;
@@ -10,8 +13,16 @@ describe('FundTransferComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FundTransferComponent],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
 
     })
     .compileComponents();

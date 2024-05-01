@@ -1,18 +1,16 @@
 <div class="card mb-3 cd-radius">
 	<div class="row g-0">
-		<div class="col-sm-12 d-flex">
-			<div class="col-md-4 col-sm-2 col-lg-4 acc-sty">
-				<img src="assets/acc-details.png" class="img-fluid rounded-start" alt="Account-Details" style="max-height: fit-content;">
-			</div>
-			<div class="col-md-8 col-sm-10 col-lg-8">
-				<div class="card-body text-color">
-					<!-- <h5 class="card-title">Card title</h5> -->
-					<p class="card-text" id="accountNo">Account Number</p>
-					<p class="card-text" id="accountBalance">Account Balance</p>
-					<p class="card-text" (click)="getTransction()" id="transHistory">Transaction History</p>
-					<p class="card-text" (click)="getStatements()" id="statements">Statements</p>
-					<!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-				</div>
+		<div class="col-md-4 acc-sty">
+			<img src="assets/acc-details.png" class="img-fluid rounded-start" alt="Account-Details" style="max-height: fit-content;">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body text-color">
+				<!-- <h5 class="card-title">Card title</h5> -->
+				<p class="card-text" id="accountNo">Account Number</p>
+				<p class="card-text" id="accountBalance">Account Balance</p>
+				<p class="card-text" (click)="getTransction()" id="transHistory">Transaction History</p>
+				<p class="card-text" (click)="getStatements()" id="statements">Statements</p>
+				<!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 			</div>
 		</div>
 	</div>

@@ -7,6 +7,8 @@ import { SelectBillerComponent } from '../select-biller/select-biller.component'
 // import { RegisterService } from '../../../register.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BankingdataService } from '../../../bankingdata.service';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('PaymentDashboardComponent', () => {
   let component: PaymentDashboardComponent;
@@ -14,9 +16,16 @@ describe('PaymentDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PaymentDashboardComponent,AccountHolderDetailsComponent,SelectBillerComponent],
       imports: [ReactiveFormsModule,HttpClientModule],
-      providers: [BankingdataService]
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
 
     })
     .compileComponents();
@@ -26,7 +35,7 @@ describe('PaymentDashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -9,7 +9,6 @@ describe('AccountDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AccountDashboardComponent],
       imports: [HttpClientModule]
     })
     .compileComponents();

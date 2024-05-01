@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TransferSuccessfullComponent } from './transfer-successfull.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { BankingdataService } from '../../../bankingdata.service';
 
 describe('TransferSuccessfullComponent', () => {
   let component: TransferSuccessfullComponent;
@@ -8,7 +12,16 @@ describe('TransferSuccessfullComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransferSuccessfullComponent]
+      imports: [HttpClientModule],
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
     })
     .compileComponents();
     

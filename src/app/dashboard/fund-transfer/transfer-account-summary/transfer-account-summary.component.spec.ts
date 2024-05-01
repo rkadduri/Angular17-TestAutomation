@@ -11,7 +11,6 @@ describe('TransferAccountSummaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TransferAccountSummaryComponent],
       imports: [HttpClientModule],
       providers: [BankingdataService]
     })

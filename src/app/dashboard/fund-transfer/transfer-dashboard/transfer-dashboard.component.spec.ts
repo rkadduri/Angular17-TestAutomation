@@ -6,6 +6,9 @@ import { AccountHolderDetailsComponent } from '../../account-details/account-hol
 import { TransferAccountSummaryComponent } from '../transfer-account-summary/transfer-account-summary.component';
 import { MoneyTransferComponent } from '../money-transfer/money-transfer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { BankingdataService } from '../../../bankingdata.service';
 
 describe('TransferDashboardComponent', () => {
   let component: TransferDashboardComponent;
@@ -13,8 +16,16 @@ describe('TransferDashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TransferDashboardComponent,AccountHolderDetailsComponent,TransferAccountSummaryComponent,MoneyTransferComponent],
-      imports: [ReactiveFormsModule,HttpClientModule]
+      imports: [ReactiveFormsModule,HttpClientModule],
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
     })
     .compileComponents();
     
