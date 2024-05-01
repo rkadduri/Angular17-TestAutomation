@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../account-details/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { BankingdataService } from '../../../bankingdata.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-payment-success',
@@ -24,8 +24,6 @@ export class PaymentSuccessComponent{
     console.log(this.service.selectBillerSuccess)
     this.selectBillerPayment =  this.service.selectBillerSuccess;
     this.mobileRechargePayment = this.service.selectBillerSuccess
-    console.log(this.selectBillerPayment)
-    console.log(this.mobileRechargePayment)
   }
 
   
