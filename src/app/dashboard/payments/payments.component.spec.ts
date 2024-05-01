@@ -1,17 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+// import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PaymentsComponent } from './payments.component';
 import { HttpClientModule } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { BankingdataService } from '../../bankingdata.service';
+
 
 describe('PaymentsComponent', () => {
   let component: PaymentsComponent;
   let fixture: ComponentFixture<PaymentsComponent>;
 
+  let service: BankingdataService;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PaymentsComponent],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
+      providers:[BankingdataService]
 
     })
     .compileComponents();
@@ -19,6 +23,8 @@ describe('PaymentsComponent', () => {
     fixture = TestBed.createComponent(PaymentsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    service = TestBed.inject(BankingdataService)
   });
 
   it('should create', () => {

@@ -1,12 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SelectBillerComponent } from './select-biller.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormArray, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
-// import { RegisterService } from '../../../register.service';
-import { DebugElement } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BankingdataService } from '../../../bankingdata.service';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('SelectBillerComponent', () => {
   let component: SelectBillerComponent;
@@ -14,12 +12,17 @@ describe('SelectBillerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SelectBillerComponent],
       imports: [ReactiveFormsModule, FormsModule, HttpClientModule],
-      providers: [BankingdataService]
-
-    })
-    .compileComponents();
+      providers: [
+       BankingdataService,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of({}) 
+          }
+        }
+      ]
+    }).compileComponents();
     
     fixture = TestBed.createComponent(SelectBillerComponent);
     component = fixture.componentInstance;
@@ -30,9 +33,9 @@ describe('SelectBillerComponent', () => {
     expect(component).toBeTruthy();
   });
   it('it shows the empty value', () => {
-   expect(component.form.value).toEqual({billerType:'Credit Card', billerdetails:'Credit Card', billDetailsAmount:'', PayingFrom:'Savings Account'})
-   expect(component.form.invalid).toBeTruthy();
-   expect(component.form.untouched).toBeTruthy();
+   expect(component.billerForm.value).toEqual({billerType:'Credit Card', billerdetails:'Credit Card', billDetailsAmount:'', PayingFrom:'Savings Account'})
+   expect(component.billerForm.invalid).toBeTruthy();
+   expect(component.billerForm.untouched).toBeTruthy();
   });
   it('should have required form controls', () => {
     let networkProvider = component.rechargeForm.controls['networkProvider']
