@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabviewsComponent } from './tabviews.component';
 import { BankingdataService } from '../../../bankingdata.service';
 import { HttpClientModule } from '@angular/common/http';
+import { of } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 describe('TabviewsComponent', () => {
   let component: TabviewsComponent;
@@ -11,9 +13,13 @@ describe('TabviewsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TabviewsComponent],
       imports:[HttpClientModule],
-      providers:[BankingdataService]
+      providers:[BankingdataService,{
+        provide: ActivatedRoute,
+        useValue: {
+          paramMap: of({}) 
+        }
+      }]
     })
     .compileComponents();
     

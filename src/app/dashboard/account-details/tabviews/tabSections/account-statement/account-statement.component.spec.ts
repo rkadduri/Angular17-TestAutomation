@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccountStatementComponent } from './account-statement.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('AccountStatementComponent', () => {
   let component: AccountStatementComponent;
@@ -8,7 +10,15 @@ describe('AccountStatementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccountStatementComponent]
+      imports: [AccountStatementComponent],
+      providers:[
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of({}) 
+          }
+        }
+      ]
     })
     .compileComponents();
     
