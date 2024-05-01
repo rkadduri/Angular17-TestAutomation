@@ -1,12 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AccountStatementComponent } from './account-statement.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 
 describe('AccountStatementComponent', () => {
   let component: AccountStatementComponent;
   let fixture: ComponentFixture<AccountStatementComponent>;
+
+  let router:Router
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,6 +26,8 @@ describe('AccountStatementComponent', () => {
     
     fixture = TestBed.createComponent(AccountStatementComponent);
     component = fixture.componentInstance;
+
+    router = TestBed.inject(Router)
     fixture.detectChanges();
   });
 
@@ -89,6 +93,16 @@ describe('AccountStatementComponent', () => {
     expect(component.toStatementDate).toEqual('');
   });
 
+  it('should navigate to dashboard when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const button = fixture.nativeElement.querySelector('#back');
+    console.log(button)
+    button.click();
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/dashboard$/)
+  });
 
 
 });

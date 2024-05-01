@@ -1,25 +1,35 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, inject, tick } from '@angular/core/testing';
 
 import { MoneyTransferComponent } from './money-transfer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { BankingdataService } from '../../../bankingdata.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from '../../../app.routes';
+import { By } from '@angular/platform-browser';
+
 
 describe('MoneyTransferComponent', () => {
   let component: MoneyTransferComponent;
   let fixture: ComponentFixture<MoneyTransferComponent>;
 
+  let router:Router
+  let backBtn: HTMLElement;
+
+ 
+
   beforeEach(async () => {
+    
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      providers: [
+      imports:[HttpClientModule,RouterTestingModule.withRoutes(routes)],
+      providers: [Router,
         BankingdataService,
          {
            provide: ActivatedRoute,
            useValue: {
              paramMap: of({}) 
-           }
+           },
          }
        ]
     })
@@ -27,6 +37,9 @@ describe('MoneyTransferComponent', () => {
     
     fixture = TestBed.createComponent(MoneyTransferComponent);
     component = fixture.componentInstance;
+
+    router = TestBed.inject(Router)
+    backBtn = fixture.debugElement.query(By.css('#back')).nativeElement;
     fixture.detectChanges();
   });
 
@@ -125,7 +138,7 @@ describe('MoneyTransferComponent', () => {
   //select tag input field
   it('should have two options', () => {
     const selectOptions = fixture.debugElement.nativeElement.querySelectorAll('option');
-    console.log(selectOptions);
+    // console.log(selectOptions);
     expect(selectOptions.length).toEqual(2);
   });
 
@@ -148,5 +161,35 @@ describe('MoneyTransferComponent', () => {
     expect(component.onSubmit).toHaveBeenCalled()
   })
   
+  //Routing Test cases
+  // it('when back button is clicked it should navigate to dashboard',()=>{
+  //     const spy = spyOn(router, 'navigate');
+  //     backBtn.click()
+  //     console.log(spy.calls.first())
+  //     // const navArgs = spy.calls.first().args[0];
+  //     expect(spy.calls.first().args[0]).toBe('dashboard')
+  // })
 
+  it('should navigate to dashboard when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const button = fixture.nativeElement.querySelector('#back');
+    console.log(button)
+    button.click();
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/dashboard$/)
+  });
+
+ xit('should navigate to transferSuccess when send button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const sendButton = fixture.nativeElement.querySelector('#send');
+    console.log(sendButton)
+    sendButton.disabled = false;
+    sendButton.click();
+    component.onSubmit(component.moneyTransferForm.value)
+
+    expect(navigateSpy).toHaveBeenCalledWith('/transferSuccess');
+  });
 });

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TransactionHistoryComponent } from './transaction-history.component';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,6 +11,8 @@ describe('TransactionHistoryComponent', () => {
   let component: TransactionHistoryComponent;
   let fixture: ComponentFixture<TransactionHistoryComponent>;
   let myservice:BankingdataService;
+
+  let router:Router
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,6 +29,7 @@ describe('TransactionHistoryComponent', () => {
     fixture = TestBed.createComponent(TransactionHistoryComponent);
     component = fixture.componentInstance;
     myservice = TestBed.inject(BankingdataService); // Inject the RegisterService
+    router = TestBed.inject(Router)
     spyOn(myservice, 'getData').and.returnValue(of({ TransHistory: [{}] }));
     fixture.detectChanges();
   });
@@ -168,6 +171,17 @@ describe('TransactionHistoryComponent', () => {
     component.currentPage = 1;
     component.previousPage();
     expect(component.currentPage).toEqual(1);
+  });
+
+  it('should navigate to dashboard when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const button = fixture.nativeElement.querySelector('#backBtn');
+    console.log(button)
+    button.click();
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/dashboard$/)
   });
 
 });

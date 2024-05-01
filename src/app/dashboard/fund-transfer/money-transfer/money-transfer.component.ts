@@ -77,7 +77,7 @@ export class MoneyTransferComponent {
     this.service.paymentHistory.push(Number(amount));
     this.service.paymentSucess.pop()
     this.service.paymentSucess.push(value);
-    this.route.navigate(['/transferSuccess']);
+    this.route.navigateByUrl('/transferSuccess');
     this.moneyTransferForm.reset();
   }
   

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
 import { By } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { BankingdataService } from '../../../bankingdata.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,7 @@ describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
+  let router:Router
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
@@ -20,6 +21,8 @@ describe('NavbarComponent', () => {
     
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
+
+    router = TestBed.inject(Router)
     fixture.detectChanges();
   });
 
@@ -82,6 +85,16 @@ describe('NavbarComponent', () => {
     expect(routerLink).toBe('/login');
   });
 
+  it('should navigate to login when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const button = fixture.nativeElement.querySelector('#logout');
+    console.log(button)
+    button.click();
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/login$/)
+  });
   
 
 
