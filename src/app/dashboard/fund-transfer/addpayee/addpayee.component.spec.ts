@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddpayeeComponent } from './addpayee.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { BankingdataService } from '../../../bankingdata.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AddpayeeComponent', () => {
   let component: AddpayeeComponent;
@@ -8,7 +12,16 @@ describe('AddpayeeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddpayeeComponent]
+      imports: [HttpClientModule],
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
     })
     .compileComponents();
     

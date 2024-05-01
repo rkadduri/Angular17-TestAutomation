@@ -4,6 +4,8 @@ import { PaymentsComponent } from './payments.component';
 import { HttpClientModule } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 import { BankingdataService } from '../../bankingdata.service';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 
 describe('PaymentsComponent', () => {
@@ -15,8 +17,15 @@ describe('PaymentsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      providers:[BankingdataService]
-
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
     })
     .compileComponents();
     
