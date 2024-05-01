@@ -385,4 +385,10 @@ body {
   .form-check-input,.form-check-label{
     cursor: pointer;
   }
-  
+  .account-style{
+    color: var(--Neutral-Colors-Smokey-White, var(--Neutral-Colors-Smoky-White, #F8F8F9));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 125% */
+    }
