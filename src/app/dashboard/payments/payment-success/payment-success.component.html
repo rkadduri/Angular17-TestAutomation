@@ -1,6 +1,7 @@
 
-<div class="container-fluid mb-5" *ngIf="!recharge">
-    <app-navbar></app-navbar>
+<div class="container-fluid mb-5">
+    @if (!recharge) {
+        <app-navbar></app-navbar>
     <main class="mainScreen text-center mt-2">
         <img src="assets/Work_6 1.png" alt="WorkDone">
         <p class="congratsText mt-1">Congratulations !!</p>
@@ -11,10 +12,12 @@
         </div>
         <button class="mt-2 dashBoardBtn" routerLink="/dashboard">Go back to Dashboard</button>
     </main>
+    }
 </div>
 
-<div class="container-fluid mb-5" *ngIf="recharge">
-    <app-navbar></app-navbar>
+<div class="container-fluid mb-5">
+    @if (recharge) {
+        <app-navbar></app-navbar>
     <main class="mainScreen text-center mt-2">
         <img src="assets/Work_6 1.png" alt="WorkDone">
         <p class="congratsText mt-1">Congratulations !!</p>
@@ -25,5 +28,6 @@
         </div>
         <button class="mt-2 dashBoardBtn" routerLink="/dashboard">Go back to Dashboard</button>
     </main>
+    }
 </div>
 
