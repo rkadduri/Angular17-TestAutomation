@@ -3,13 +3,14 @@ import { SelectBillerComponent } from './select-biller.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BankingdataService } from '../../../bankingdata.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 
 describe('SelectBillerComponent', () => {
   let component: SelectBillerComponent;
   let fixture: ComponentFixture<SelectBillerComponent>;
 
+  let router:Router
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, FormsModule, HttpClientModule],
@@ -26,6 +27,8 @@ describe('SelectBillerComponent', () => {
     
     fixture = TestBed.createComponent(SelectBillerComponent);
     component = fixture.componentInstance;
+
+    router = TestBed.inject(Router)
     fixture.detectChanges();
   });
 
@@ -96,5 +99,29 @@ describe('SelectBillerComponent', () => {
     expect(billerDetails.length).toEqual(2)
   })
 
+  it('should navigate to dashboard when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const backButton = fixture.nativeElement.querySelector('#back');
+    console.log(backButton)
+    backButton.click();
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/dashboard$/)
+  });
+
+  
+  xit('should navigate to dashboard when back button is clicked', () => {
+    const navigateSpy = spyOn(router, 'navigateByUrl');
+
+    const payButton = fixture.nativeElement.querySelector('#pay');
+    console.log(payButton)
+    payButton.disabled = false
+    payButton.click();
+    component.onSubmit()
+
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy.calls.mostRecent().args[0]).toMatch(/\/paymentSuccess$/)
+  });
   
 });

@@ -129,10 +129,10 @@
           </div>
         <!-- Continue with the rest of your form -->
         <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
-          <button class="cancelAndSaveBtn me-2" routerLink="/dashboard">Back</button>
+          <button class="cancelAndSaveBtn me-2" routerLink="/dashboard" id="back">Back</button>
           <button class="cancelAndSaveBtn ms-3"  (click)="onCancel()">Cancel</button>
           <!-- Adjust the condition for disabling the Pay button as necessary -->
-          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="billerForm.invalid && (!showRechargeForm || rechargeForm.invalid)" (click)="onSubmit()">Pay</button>
+          <button type="submit" class="btn btn-primary cancelAndSaveBtn saveBtn"  [disabled]="billerForm.invalid && (!showRechargeForm || rechargeForm.invalid)" (click)="onSubmit()" id="pay">Pay</button>
         </div>
       </div>
     </form>
