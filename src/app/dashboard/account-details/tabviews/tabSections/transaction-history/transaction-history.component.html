@@ -1,11 +1,9 @@
-<div class="d-flex mt-4 ms-4 justify-content-center">
-  <!-- Transaction Date -->
+  <div class="d-lg-flex mt-4 ms-4 justify-content-lg-center d-sm-block justify-content-sm-start">
   <div class="form-check transfield">
     <input class="form-check-input" (change)="userChange()" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
       checked />
     <label class="form-check-label mt-1 bold-text" for="flexRadioDefault1">Transaction Date</label>
   </div>
-  <!-- From and To Date Inputs -->
   <div class="d-flex ms-3">
     <div class="d-flex Duration">
       <label class="lablespace me-3 balance lblText">
@@ -23,14 +21,13 @@
     </div>
   </div>
 </div>
+
 <div class="d-flex mt-3 ms-4 periodSpace">
-  <!-- Transaction Period -->
   <div class="form-check transfield">
     <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="userChange()" id="flexRadioDefault2"
       (click)="showWithPeriod()" />
     <label class="form-check-label mt-1 bold-text" for="flexRadioDefault2">Transaction Period</label>
   </div>
-  <!-- Select Period Dropdown -->
   <div class="d-flex">
     <label class="lablespace balance lblText me-3">
       <p>Select</p>
@@ -42,9 +39,10 @@
     </select>
   </div>
 </div>
+
 <div class="d-flex mb-4 mt-5 justify-content-center">
   <!-- Cancel and Show Buttons -->
-  <button class="cancelAndSaveBtn me-2" routerLink="/dashboard" id="backBtn">Back</button>
+  <button class="cancelAndSaveBtn me-2 d-none d-lg-inline" routerLink="/dashboard" id="backBtn">Back</button>
   <button class="cancelAndSaveBtn ms-3" (click)="cancelField()">CANCEL</button>
   <button class="btn btn-primary cancelAndSaveBtn saveBtn me-2" (click)="submitField()">SHOW</button>
 </div>
