@@ -132,8 +132,6 @@
                 <option [value]="country">{{ country }}</option>
                 }
               </select>
-              <!-- <div *ngIf="registrationForm.get('country')?.hasError('required') && registrationForm.get('country')?.touched"
-								 class="text-danger">Please select a country</div> -->
               @if (registrationForm.get('country')?.hasError('required') &&
               registrationForm.get('country')?.touched) {
               <p class="text-danger">Please select a country</p>
@@ -238,7 +236,7 @@
       </form>
     </div>
     <div class="col-md-7 ps-4">
-      <img
+      <img class="d-none d-sm-block"
         [src]="imagePath"
         [width]="imageWidth"
         [height]="imageHeight"
