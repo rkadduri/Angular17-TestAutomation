@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoneyTransferComponent } from './money-transfer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { BankingdataService } from '../../../bankingdata.service';
 
 describe('MoneyTransferComponent', () => {
   let component: MoneyTransferComponent;
@@ -8,7 +12,16 @@ describe('MoneyTransferComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MoneyTransferComponent]
+      imports: [HttpClientModule],
+      providers: [
+        BankingdataService,
+         {
+           provide: ActivatedRoute,
+           useValue: {
+             paramMap: of({}) 
+           }
+         }
+       ]
     })
     .compileComponents();
     

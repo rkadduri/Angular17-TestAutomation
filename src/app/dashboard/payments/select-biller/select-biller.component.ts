@@ -61,6 +61,7 @@ export class SelectBillerComponent {
       console.log("Biller Form")
       this.service.selectBillerSuccess.pop()
       this.service.selectBillerSuccess.push(this.billerForm.value);
+      console.log(this.service.selectBillerSuccess)
       this.service.rechargePaymentSuccess = false;
       this.service.balance -= billValue
       this.route.navigate(['/paymentSuccess'])
