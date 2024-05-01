@@ -132,8 +132,6 @@
                 <option [value]="country">{{ country }}</option>
                 }
               </select>
-              <!-- <div *ngIf="registrationForm.get('country')?.hasError('required') && registrationForm.get('country')?.touched"
-								 class="text-danger">Please select a country</div> -->
               @if (registrationForm.get('country')?.hasError('required') &&
               registrationForm.get('country')?.touched) {
               <p class="text-danger">Please select a country</p>
