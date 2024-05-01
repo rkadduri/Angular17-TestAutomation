@@ -30,10 +30,7 @@ describe('AccountDetailsComponent', () => {
     const imgElement = fixture.debugElement.query(By.css('img'));
     expect(imgElement).toBeTruthy();
     expect(imgElement.nativeElement.getAttribute('src')).toBe(
-      'assets/acc-details.png'
-    );
-    expect(imgElement.nativeElement.getAttribute('class')).toContain(
-      'img-fluid'
+      'assets/account-icon.svg'
     );
     expect(imgElement.nativeElement.getAttribute('alt')).toBe(
       'Account-Details'

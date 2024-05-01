@@ -1,8 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
+import {HttpClientTestingModule,HttpTestingController} from '@angular/common/http/testing';
 import { BankingdataService } from './bankingdata.service';
 
 describe('BankingdataService', () => {
@@ -173,9 +170,9 @@ it('should initialize tabNames with an array of objects', () => {
   ]);
 });
 
-it('should initialize userSelectedTab with the displayName of the first tab', () => {
-  expect(service.userSelectedTab).toEqual('Account Details');
-});
+  it('should initialize userSelectedTab with the displayName of the first tab', () => {
+    expect(service.userSelectedTab).toEqual('Account Details');
+  });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
