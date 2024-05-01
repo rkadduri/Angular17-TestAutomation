@@ -1,14 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AccountDetailsComponent } from './account-details/account-details.component';
-import { PaymentsComponent } from './payments/payments.component';
-import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
 import { By } from '@angular/platform-browser';
-// import { RegisterService } from '../register.service';
-import { inject } from '@angular/core';
 import { BankingdataService } from '../bankingdata.service';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
@@ -20,7 +14,6 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      // declarations: [DashboardComponent,AccountDetailsComponent,PaymentsComponent,FundTransferComponent],
       imports: [ReactiveFormsModule,HttpClientModule],
       providers: [BankingdataService,{ provide: ActivatedRoute, useValue: {paramMap:of({})} }],
       
