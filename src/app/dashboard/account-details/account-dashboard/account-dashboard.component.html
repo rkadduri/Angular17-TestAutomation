@@ -2,7 +2,9 @@
   @if (isloaded) {
   <app-account-holder-details></app-account-holder-details>
   <app-multiple-accounts></app-multiple-accounts>
-  <app-account-summary></app-account-summary>
+  <div class="d-none d-lg-block">
+    <app-account-summary></app-account-summary>
+  </div>
   <app-tabviews></app-tabviews>
   }@else{
   <div class="d-flex justify-content-center mt-2">
