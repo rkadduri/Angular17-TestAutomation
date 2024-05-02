@@ -1,74 +1,49 @@
 <section class="container-fluid mb-3">
-    <!-- Tab View Of the Page -->
-    <ul class="nav nav-tabs">
-      <!-- Recent Tab -->
-      <li
-        class="nav-item"
-        [ngClass]="{ active: activeTab === 1 }"
-        (click)="activateTab(1)"
-      >
-        <a
-          class="nav-link"
-          [ngStyle]="{
+  <!-- Tab View Of the Page -->
+  <ul class="nav nav-tabs">
+    <!-- Recent Tab -->
+    <li class="nav-item" [ngClass]="{ active: activeTab === 1 }" (click)="activateTab(1)" id="tabs">
+      <a class="nav-link" [ngStyle]="{
             'border-bottom': activeTab === 1 ? '2px solid #082341' : 'none',
             color: activeTab === 1 ? '#082341' : '#000',
-            'font-size': activeTab == 1 ? '20px' : '16px',
+            
             opacity: activeTab === 1 ? '1' : '0.4'
-          }"
-          >Recent Transaction</a
-        >
-      </li>
-      <!-- Transaction History -->
-      <li
-        class="nav-item"
-        [ngClass]="{ active: activeTab === 2 }"
-        (click)="activateTab(2)"
-      >
-        <a
-          class="nav-link"
-          [ngStyle]="{
+          }">Recent Transaction</a>
+    </li>
+    <!-- Transaction History -->
+    <li class="nav-item" [ngClass]="{ active: activeTab === 2 }" (click)="activateTab(2)" id="tabs">
+      <a class="nav-link" [ngStyle]="{
             'border-bottom': activeTab === 2 ? '2px solid #082341' : 'none',
             color: activeTab === 2 ? '#082341' : '#000',
-            'font-size': activeTab == 2 ? '20px' : '16px',
+           
             opacity: activeTab === 2 ? '1' : '0.4'
-          }"
-          >Transaction History</a
-        >
-      </li>
-      <!-- Account Statement -->
-      <li
-        class="nav-item"
-        [ngClass]="{ active: activeTab === 3 }"
-        (click)="activateTab(3)"
-      >
-        <a
-          class="nav-link"
-          [ngStyle]="{
+          }">Transaction History</a>
+    </li>
+    <!-- Account Statement -->
+    <li class="nav-item" [ngClass]="{ active: activeTab === 3 }" (click)="activateTab(3)" id="tabs">
+      <a class="nav-link" [ngStyle]="{
             'border-bottom': activeTab === 3 ? '2px solid #082341' : 'none',
             color: activeTab === 3 ? '#082341' : '#000',
-            'font-size': activeTab == 3 ? '20px' : '16px',
+          
             opacity: activeTab === 3 ? '1' : '0.4'
-          }"
-          >Statement</a
-        >
-      </li>
-    </ul>
-  
-    <main class="tab-content mt-2">
-      <!-- User Recent Transactions Tab -->
-      <div class="tab-pane" [ngClass]="{ active: activeTab === 1 }">
-        <!-- Showing Data in the Form Of Table -->
-        <app-recent-transaction></app-recent-transaction>
-      </div>
-      <!-- User Transaction History Tab -->
-      <div class="tab-pane" [ngClass]="{ active: activeTab === 2 }">
-        <!-- Tansaction Inputs -->
-        <app-transaction-history></app-transaction-history>      
-      </div>
-      <!-- Account Statement Tab -->
-      <div class="tab-pane" [ngClass]="{ active: activeTab === 3 }">
-        <app-account-statement></app-account-statement>
-      </div>
-    </main>
-  </section>
-  
+          }">Statement</a>
+    </li>
+  </ul>
+
+  <main class="tab-content mt-2">
+    <!-- User Recent Transactions Tab -->
+    <div class="tab-pane" [ngClass]="{ active: activeTab === 1 }">
+      <!-- Showing Data in the Form Of Table -->
+      <app-recent-transaction></app-recent-transaction>
+    </div>
+    <!-- User Transaction History Tab -->
+    <div class="tab-pane" [ngClass]="{ active: activeTab === 2 }">
+      <!-- Tansaction Inputs -->
+      <app-transaction-history></app-transaction-history>
+    </div>
+    <!-- Account Statement Tab -->
+    <div class="tab-pane" [ngClass]="{ active: activeTab === 3 }">
+      <app-account-statement></app-account-statement>
+    </div>
+  </main>
+</section>

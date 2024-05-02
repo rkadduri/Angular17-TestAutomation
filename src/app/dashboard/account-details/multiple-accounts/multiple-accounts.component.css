@@ -56,4 +56,12 @@
     font-size: 14px;
     line-height: normal;
   }
-  
+  #scrollbar{
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  #scrollbar::-webkit-scrollbar{
+    display: none;
+  }
