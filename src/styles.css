@@ -392,3 +392,10 @@ body {
     font-weight: 600;
     line-height: 20px; /* 125% */
     }
+    #card-inside-text{
+      font-size: calc(10px + 0.5vw);
+      font-weight: bold;
+  }
+  .cursor{
+    cursor: pointer;
+  }
