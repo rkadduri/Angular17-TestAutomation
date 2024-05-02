@@ -14,6 +14,7 @@ describe('NavbarComponent', () => {
   let router:Router
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      // declarations:[NavbarComponent],
       imports: [HttpClientModule],
       providers: [BankingdataService,{ provide: ActivatedRoute, useValue: {paramMap:of({})} }],
     })
