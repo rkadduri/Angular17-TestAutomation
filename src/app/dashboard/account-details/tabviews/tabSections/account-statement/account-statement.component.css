@@ -10,6 +10,10 @@
   margin-top: 5px;
 }
 
+.sendToside{
+  margin-left: 248px !important;
+}
+
 .lblText{
   color: #082341;
 }

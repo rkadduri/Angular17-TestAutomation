@@ -1,5 +1,4 @@
-<div class="ms-5 sendToside">
-  <div class="d-flex statementTransPeriod mt-4">
+<!-- <div class="d-flex statementTransPeriod mt-4">
     <div class="form-check transfield">
       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked />
       <label class="form-check-label mt-1 bold-text" for="flexRadioDefault3">Transaction Date</label>
@@ -14,23 +13,53 @@
         <input class="form-control Field inputBox" type="date" [(ngModel)]="toTransDate" name="toTransDate" (click)="showWithDate()" [max]="todayDate | date: 'yyyy-MM-dd'" />
       </div>
     </div>
+</div> -->
+<div class="d-lg-flex mt-4 ms-4 justify-content-lg-center d-sm-block justify-content-sm-start">
+  <div class="form-check">
+    <input class="form-check-input me-3" (change)="userChange()" type="radio" name="flexRadioDefault"
+      id="flexRadioDefault1" checked />
+    <label class="form-check-label mt-1 bold-text" for="flexRadioDefault1">Transaction Date</label>
   </div>
-  
-  <div class="d-flex statementTransPeriod">
-    <div class="form-check transfield">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" (click)="showWithPeriod()" />
-      <label class="form-check-label mt-1 bold-text" for="flexRadioDefault4">Transaction Period</label>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="d-flex mt-lg-0 mt-4 mb-lg-0 mb-4 ms-2">
+        <label class="lablespace me-4 balance lblText">
+          <p>From</p>
+        </label>
+        <input class="form-control Field inputBox" type="date" [(ngModel)]="fromTransDate" name="fromTransDate"
+          (click)="showWithDate()" />
+      </div>
     </div>
-    <div class="d-flex ">
-      <label class="lablespace me-2 mb-3 ms-2 balance lblText"><p>Select</p></label>
-      <select class="form-select Field inputBox" name="duration" id="duration" (change)="onSelectPeriodicDays($event)">
-        @for (eachday of periodicDays ; track $index) {
-          <option [value]="eachday">{{ eachday }}</option>
-        }
-      </select>
+    <div class="col-md-6 col-sm-12">
+      <div class="d-flex ms-2">
+        <label class="lablespace me-4 balance lblText ms-lg-0 ms-3">
+          <p>To</p>
+        </label>
+        <input class="form-control Field inputBox" type="date" [(ngModel)]="toTransDate" name="toTransDate"
+          (click)="showWithDate()" max="{{ todayDate | date : 'yyyy-MM-dd' }}" />
+      </div>
     </div>
   </div>
 </div>
+
+<div class=" mt-4 ms-4 d-lg-flex" id="secondBox">
+  <div class="form-check transfield">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4"
+      (click)="showWithPeriod()" />
+    <label class="form-check-label mt-1 bold-text" for="flexRadioDefault4">Transaction Period</label>
+  </div>
+  <div class="d-flex mt-lg-0 mt-4">
+    <label class="lablespace me-4 mb-3 balance lblText ms-1">
+      <p>Select</p>
+    </label>
+    <select class="form-select Field inputBox" name="duration" id="duration" (change)="onSelectPeriodicDays($event)">
+      @for (eachday of periodicDays ; track $index) {
+      <option [value]="eachday">{{ eachday }}</option>
+      }
+    </select>
+  </div>
+</div>
+
 
 <div class="d-flex mb-4 mt-5 justify-content-center">
   <!-- Cancel and Show Buttons -->

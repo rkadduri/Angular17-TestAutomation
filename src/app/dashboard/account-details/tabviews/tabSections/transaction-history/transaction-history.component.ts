@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule, DatePipe, NgStyle } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { DatePipe, NgStyle } from '@angular/common';
+import {ElementRef,Renderer2}from'@angular/core';
 
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-transaction-history',
   standalone: true,
-  imports: [FormsModule,DatePipe,NgStyle,RouterLink],
+  imports: [FormsModule, DatePipe, NgStyle, RouterLink],
   templateUrl: './transaction-history.component.html',
   styleUrl: './transaction-history.component.css'
 })
 export class TransactionHistoryComponent {
-  constructor(private serv: BankingdataService) {
+
+
+
+  constructor(private serv: BankingdataService,private render:Renderer2,private elementRef:ElementRef) {
     this.rightPaginationItems = this.totalPages;
   }
 
+
+
+
+
   ngOnInit() {
+    this.addOrRemoveClassOnViewport();
+    window.addEventListener('resize',()=>{
+      this.addOrRemoveClassOnViewport();
+    })
     this.generateTransactionData();
     this.rightPaginationItems = this.getpageList(
       this.TransHistory.length,
@@ -41,6 +53,23 @@ export class TransactionHistoryComponent {
         balance: '1109.82',
         dayClosingBalance: '1109.82',
       });
+    }
+  }
+
+  addOrRemoveClassOnViewport(){
+    const container = document.getElementById('secondBox');
+    if(!container){
+      return ;
+    }
+    const screenWidth = window.innerWidth;
+    const isLargeScreen = screenWidth>=992;
+
+    if(isLargeScreen){
+      this.render.addClass(container,'sendToside');
+      // console.log("Large screen");
+    }else{
+      this.render.removeClass(container,'sendToside');
+      // console.log("small Screen");
     }
   }
 
@@ -69,7 +98,7 @@ export class TransactionHistoryComponent {
     this.showflag = 'Show With Period';
   }
 
-  userChange(){
+  userChange() {
     this.cancelField();
   }
 
@@ -100,7 +129,7 @@ export class TransactionHistoryComponent {
           );
         }
       });
-      this.showflag='';
+      this.showflag = '';
     } else if (
       this.showflag == 'Show With Period' &&
       this.selectedperidocday != ''
@@ -116,7 +145,7 @@ export class TransactionHistoryComponent {
           );
         }
       });
-      this.showflag='';
+      this.showflag = '';
     } else {
       alert('Choose Option and Select The Fields To Download');
     }
