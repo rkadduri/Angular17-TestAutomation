@@ -13,11 +13,14 @@
   
   .lblText{
     color: #082341;
-    
   }
   
   .periodSpace{
-    padding-left: 187px;
+    padding-left: 208px;
+  }
+
+  .sendToside{
+    margin-left: 200px !important;
   }
 
   
