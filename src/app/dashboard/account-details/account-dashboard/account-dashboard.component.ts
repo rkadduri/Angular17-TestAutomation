@@ -3,7 +3,6 @@ import { AccountHolderDetailsComponent } from '../account-holder-details/account
 import { MultipleAccountsComponent } from '../multiple-accounts/multiple-accounts.component';
 import { AccountSummaryComponent } from '../account-summary/account-summary.component';
 import { TabviewsComponent } from '../tabviews/tabviews.component';
-import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({

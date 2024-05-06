@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink} from '@angular/router';
 import { BankingdataService } from '../../../bankingdata.service';
-import { CommonModule } from '@angular/common';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-select-biller',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule,RouterLink,DatePipe],
   templateUrl: './select-biller.component.html',
   styleUrl: './select-biller.component.css'
 })

@@ -1,5 +1,4 @@
-import { ComponentFixture, TestBed, fakeAsync, inject, tick } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed} from '@angular/core/testing';
 import { MoneyTransferComponent } from './money-transfer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';

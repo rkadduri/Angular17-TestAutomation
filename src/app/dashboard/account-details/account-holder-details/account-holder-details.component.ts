@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
-import { CommonModule, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({

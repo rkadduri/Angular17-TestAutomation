@@ -2,11 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ForgotInfoComponent } from './forgot-info.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { BankingdataService } from '../../bankingdata.service';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
-// import { RegisterService } from '../register.service';
+
 
 describe('ForgotInfoComponent', () => {
   let myservice: BankingdataService;

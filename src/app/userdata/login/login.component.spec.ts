@@ -1,13 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { routes } from '../../app.routes';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

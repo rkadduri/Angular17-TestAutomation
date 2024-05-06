@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PaymentsComponent } from './payments.component';
 import { HttpClientModule } from '@angular/common/http';
 import { By } from '@angular/platform-browser';

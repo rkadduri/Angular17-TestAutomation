@@ -2,13 +2,12 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BankingdataService } from '../../bankingdata.service';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-info',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule,RouterLink],
   templateUrl: './forgot-info.component.html',
   styleUrl: './forgot-info.component.css'
 })

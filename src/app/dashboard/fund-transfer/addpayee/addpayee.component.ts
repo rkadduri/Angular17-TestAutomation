@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BankingdataService } from '../../../bankingdata.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-addpayee',

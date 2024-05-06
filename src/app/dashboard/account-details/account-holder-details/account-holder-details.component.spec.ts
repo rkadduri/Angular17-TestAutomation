@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AccountHolderDetailsComponent } from './account-holder-details.component';
 import { BankingdataService } from '../../../bankingdata.service';
 import { HttpClientModule } from '@angular/common/http';
