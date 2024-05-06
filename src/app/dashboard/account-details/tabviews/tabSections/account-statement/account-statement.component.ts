@@ -1,5 +1,5 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -15,6 +15,40 @@ export class AccountStatementComponent {
   toStatementDate = '';
   showflag = '';
   todayDate = new Date();
+
+  constructor(private render:Renderer2){}
+
+  ngOnInit(){
+    this.addOrRemoveClassOnViewport();
+    window.addEventListener('resize',()=>{
+      this.addOrRemoveClassOnViewport();
+    })
+  }
+
+  addOrRemoveClassOnViewport(){
+    const periodcontainer = document.getElementById('periodBox');
+    const typecontainer = document.getElementById('downloadBox');
+    if(!periodcontainer){
+      return ;
+    }
+
+    if(!typecontainer){
+      return;
+    }
+    
+    const screenWidth = window.innerWidth;
+    const isLargeScreen = screenWidth>=992;
+
+    if(isLargeScreen){
+      this.render.addClass(periodcontainer,'sendToside');
+      this.render.addClass(typecontainer,'sendToside');
+      // console.log("Large screen");
+    }else{
+      this.render.removeClass(periodcontainer,'sendToside');
+      this.render.removeClass(typecontainer,'sendToside');
+      // console.log("small Screen");
+    }
+  }
 
   statementPeriod = ['Last 7 Days', 'Last 14 Days'];
   selectStatementPeriod = this.statementPeriod[0];

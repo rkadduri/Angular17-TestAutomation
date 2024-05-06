@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { FormsModule } from '@angular/forms';
 import { DatePipe, NgStyle } from '@angular/common';
-import {ElementRef,Renderer2}from'@angular/core';
+import {Renderer2}from'@angular/core';
 
 import { RouterLink } from '@angular/router';
 @Component({
@@ -16,7 +16,7 @@ export class TransactionHistoryComponent {
 
 
 
-  constructor(private serv: BankingdataService,private render:Renderer2,private elementRef:ElementRef) {
+  constructor(private serv: BankingdataService,private render:Renderer2) {
     this.rightPaginationItems = this.totalPages;
   }
 
