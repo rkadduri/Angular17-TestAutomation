@@ -100,6 +100,5 @@ export class AccountStatementComponent {
     this.selectedStatementFormat = '';
     this.fromStatementDate = '';
     this.toStatementDate = '';
-    this.showflag='';
   }
 }
