@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { BankingdataService } from '../../../bankingdata.service';
 import { NgClass, NgStyle } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(private service: BankingdataService) {}
+  constructor(private service: BankingdataService,private render:Renderer2,private elementRef:ElementRef) {}
 
   alltabNames = this.service.tabNames;
   UserSelectTab = this.service.userSelectedTab;
@@ -23,5 +23,38 @@ export class NavbarComponent {
     this.UserSelectTab = name;
   }
 
+  ngOnInit(){
+    this.addOrRemoveClassOnViewport();
+    window.addEventListener('resize',()=>{
+      this.addOrRemoveClassOnViewport();
+    })
+  }
+
+  addOrRemoveClassOnViewport(){
+    const accountnavitem = document.getElementById('accountNavitem');
+    console.log(accountnavitem);
+  
+    const paymentnavitem = document.getElementById('paymentNavitem');
+    console.log(paymentnavitem);
+
+    const transfernavitem = document.getElementById('transferNavitem');
+    console.log(transfernavitem)
+
+    const screenWidth = window.innerWidth;
+    const isLargeScreen = screenWidth<=992;
+
+    if(isLargeScreen){
+      this.render.addClass(accountnavitem,'navColor');
+      this.render.addClass(paymentnavitem,'navColor');
+      this.render.addClass(transfernavitem,'navColor');
+     
+      // console.log("Large screen");
+    }else{
+      this.render.removeClass(accountnavitem,'navColor');
+      this.render.removeClass(paymentnavitem,'navColor');
+      this.render.removeClass(transfernavitem,'navColor');
+      // console.log("small Screen");
+    }
+  }
 
 }
