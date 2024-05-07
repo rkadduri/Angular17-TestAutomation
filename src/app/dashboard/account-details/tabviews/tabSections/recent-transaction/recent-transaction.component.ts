@@ -1,17 +1,17 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { recent } from '../../../../../modal';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-recent-transaction',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './recent-transaction.component.html',
   styleUrl: './recent-transaction.component.css'
 })
 export class RecentTransactionComponent {
-  constructor(private serv:BankingdataService){}
+  constructor(private serv:BankingdataService,private render:Renderer2){}
   RecentTrans!:recent[];
 
   ngOnInit(){
@@ -22,4 +22,6 @@ export class RecentTransactionComponent {
       }
     });
   }
+
+  
 } 

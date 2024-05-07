@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { BankingdataService } from '../bankingdata.service';
 import { Router, RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountDetailsComponent } from "./account-details/account-details.component";
 import { PaymentsComponent } from "./payments/payments.component";
@@ -12,7 +11,7 @@ import { FundTransferComponent } from "./fund-transfer/fund-transfer.component";
     standalone: true,
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.css',
-    imports: [CommonModule, ReactiveFormsModule, AccountDetailsComponent, PaymentsComponent, FundTransferComponent,RouterLink]
+    imports: [ReactiveFormsModule, AccountDetailsComponent, PaymentsComponent, FundTransferComponent,RouterLink]
 })
 export class DashboardComponent {
   username:any;

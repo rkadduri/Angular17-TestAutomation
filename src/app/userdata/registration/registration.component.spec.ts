@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegistrationComponent } from './registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { first, of } from 'rxjs';
+import { of } from 'rxjs';
 import { BankingdataService } from '../../bankingdata.service';
 import { ActivatedRoute } from '@angular/router';
 

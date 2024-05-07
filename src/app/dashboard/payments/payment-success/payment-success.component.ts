@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NavbarComponent } from '../../account-details/navbar/navbar.component';
-import { CommonModule } from '@angular/common';
 import { BankingdataService } from '../../../bankingdata.service';
 import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-payment-success',
   standalone: true,
-  imports: [NavbarComponent,CommonModule,RouterLink],
+  imports: [NavbarComponent,RouterLink],
   templateUrl: './payment-success.component.html',
   styleUrl: './payment-success.component.css'
 })

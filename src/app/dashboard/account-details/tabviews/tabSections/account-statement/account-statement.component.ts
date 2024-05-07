@@ -1,4 +1,4 @@
-import { CommonModule, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-account-statement',
   standalone: true,
-  imports: [FormsModule,DatePipe,RouterLink],
+  imports: [FormsModule, DatePipe, RouterLink],
   templateUrl: './account-statement.component.html',
   styleUrl: './account-statement.component.css'
 })
@@ -16,36 +16,36 @@ export class AccountStatementComponent {
   showflag = '';
   todayDate = new Date();
 
-  constructor(private render:Renderer2){}
+  constructor(private render: Renderer2) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.addOrRemoveClassOnViewport();
-    window.addEventListener('resize',()=>{
+    window.addEventListener('resize', () => {
       this.addOrRemoveClassOnViewport();
     })
   }
 
-  addOrRemoveClassOnViewport(){
+  addOrRemoveClassOnViewport() {
     const periodcontainer = document.getElementById('periodBox');
     const typecontainer = document.getElementById('downloadBox');
-    if(!periodcontainer){
-      return ;
-    }
-
-    if(!typecontainer){
+    if (!periodcontainer) {
       return;
     }
-    
-    const screenWidth = window.innerWidth;
-    const isLargeScreen = screenWidth>=992;
 
-    if(isLargeScreen){
-      this.render.addClass(periodcontainer,'sendToside');
-      this.render.addClass(typecontainer,'sendToside');
+    if (!typecontainer) {
+      return;
+    }
+
+    const screenWidth = window.innerWidth;
+    const isLargeScreen = screenWidth >= 992;
+
+    if (isLargeScreen) {
+      this.render.addClass(periodcontainer, 'sendToside');
+      this.render.addClass(typecontainer, 'sendToside');
       // console.log("Large screen");
-    }else{
-      this.render.removeClass(periodcontainer,'sendToside');
-      this.render.removeClass(typecontainer,'sendToside');
+    } else {
+      this.render.removeClass(periodcontainer, 'sendToside');
+      this.render.removeClass(typecontainer, 'sendToside');
       // console.log("small Screen");
     }
   }
@@ -58,10 +58,12 @@ export class AccountStatementComponent {
 
   showWithDate() {
     this.showflag = 'Show With Date';
+    console.log(this.showflag);
   }
 
   showWithPeriod() {
     this.showflag = 'Show With Period';
+    console.log(this.showflag);
   }
 
   onSelectStatementPeriod(selectedValue: any) {
@@ -73,6 +75,7 @@ export class AccountStatementComponent {
   }
 
   submitStatement() {
+    console.log("while submitting",this.showflag);
     if (
       (this.showflag === 'Show With Date' &&
         this.fromStatementDate !== '' &&
@@ -84,7 +87,7 @@ export class AccountStatementComponent {
       let message = '';
       if (this.showflag === 'Show With Date') {
         message = `Downloaded Statement from ${this.fromStatementDate} to ${this.toStatementDate} in ${this.selectedStatementFormat} Format`;
-      } else {
+      } else if(this.showflag==='Show With Period') {
         message = `Downloaded Statement of ${this.selectStatementPeriod} in ${this.selectedStatementFormat} Format`;
       }
       alert(message);

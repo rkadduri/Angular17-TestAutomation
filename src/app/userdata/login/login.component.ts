@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angula
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BankingdataService } from '../../bankingdata.service';
-import { CommonModule } from '@angular/common';
 import { ForgotInfoComponent } from "../forgot-info/forgot-info.component";
 
 @Component({
@@ -11,7 +10,7 @@ import { ForgotInfoComponent } from "../forgot-info/forgot-info.component";
     standalone: true,
     templateUrl: './login.component.html',
     styleUrl: './login.component.css',
-    imports: [CommonModule, ReactiveFormsModule, ForgotInfoComponent]
+    imports: [ReactiveFormsModule, ForgotInfoComponent]
 })
 export class LoginComponent {
   loginForm!: FormGroup;
