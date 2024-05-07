@@ -4,7 +4,7 @@
     font-weight: 700;
     line-height: normal;
   }
-  #tabs{
-    font-size: calc(10px + 1vw);
-  }
+#tabs{
+    font-size: calc(10px + 0.8vw);
+}
   
