@@ -7,6 +7,22 @@
     font-style: normal;
     font-weight: 500;
   }
+
+  #smDate{
+    color: #363636;
+    font-size: calc(12px + 0.5vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0px 18px 0px 0px;
+  }
+
+  #smMoney{
+    font-size: calc(12px + 0.5vw);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
   
   .eachName {
     color: #1f1f1f;
@@ -18,7 +34,6 @@
   
   .eachType {
     color: #494848;
-  
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -31,6 +46,15 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+
+  #smDesc{
+    color: #494848;
+    font-size: calc(10px + 0.5vw);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 18px;
   }
   
   .eachAmountCredit {

@@ -25,9 +25,7 @@ export class NavbarComponent {
 
   ngOnInit(){
     this.addOrRemoveClassOnViewport();
-    window.addEventListener('resize',()=>{
-      this.addOrRemoveClassOnViewport();
-    })
+   
   }
 
   addOrRemoveClassOnViewport(){
