@@ -4,7 +4,26 @@
     font-weight: 700;
     line-height: normal;
   }
-#tabs{
+/* #tabs{
     font-size: calc(9px + 0.8vw);
+} */
+
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 12px !important;
+  }
+
+  .nav-link.active {
+    font-size: 14px !important;
+  }
 }
-  
+
+@media (max-width:406px){
+  .nav-link {
+    font-size: 10px !important;
+  }
+
+  .nav-link.active {
+    font-size: 12px !important;
+  }
+}
