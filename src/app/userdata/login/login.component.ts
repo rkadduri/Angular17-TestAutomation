@@ -14,9 +14,9 @@ import { ForgotInfoComponent } from "../forgot-info/forgot-info.component";
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  imagePath = 'assets/image.png';
-  imageWidth = 600; 
-  imageHeight = 550;
+  imagePath = 'assets/login-img.png';
+  imageWidth = 700; 
+  imageHeight = 600;
   isShowPopup: boolean = false;
   submitted = false;
   uEmail: any;
