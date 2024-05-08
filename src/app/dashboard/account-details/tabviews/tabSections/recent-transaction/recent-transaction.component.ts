@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { BankingdataService } from '../../../../../bankingdata.service';
 import { recent } from '../../../../../modal';
 import { CurrencyPipe } from '@angular/common';
@@ -11,17 +11,18 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './recent-transaction.component.css'
 })
 export class RecentTransactionComponent {
-  constructor(private serv:BankingdataService,private render:Renderer2){}
+  constructor(private serv:BankingdataService){}
   RecentTrans!:recent[];
+
+  recentTrans = signal(this.RecentTrans);
 
   ngOnInit(){
     this.serv.getData().subscribe((data:any)=>{
       if(data['RecentTrans'].length!=0){
-        console.log(data['RecentTrans']);
-        this.RecentTrans=data['RecentTrans'];
+        this.recentTrans.set(data['RecentTrans']);
+        console.log(this.recentTrans());
       }
     });
   }
-
   
 } 

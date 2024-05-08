@@ -31,4 +31,6 @@ export class TabviewsComponent {
     this.activeTab = tabNo;
   }
 
+  
+
 }

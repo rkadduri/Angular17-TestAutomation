@@ -1,5 +1,5 @@
 .logo{
-    color: var(--Primary, var(--Brand-Primary-Colors-Evoke-Blue-Evoke-Blue, #1B154C));
+    color: var(--White, #FFF);
     font-family: Mulish;
     font-size: 22px;
     font-style: normal;
@@ -7,10 +7,24 @@
     line-height: normal;
 }
 .btn-primary {
-    border: 1px solid #453985 !important;
-    background: #453985;
+    background-color: #e1934b !important;
+    color: white;
 }
 .navbar-text{
     text-transform: capitalize;
-    
+    color: #FFF;
+}
+.specific-text{
+    opacity: 0.5;
+color: #37383A;
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: lowercase;
+}
+.bg-light{
+background: #082341 !important;
+box-shadow: 4px 4px 24px 4px rgba(255, 255, 255, 0.10);
 }

@@ -1,16 +1,17 @@
 .data {
-    padding: 10px;
+    padding: 10px 30px 10px 10px;
+    height: 26px;
+    width: 26px;
   }
   .eachDate {
     color: #494848;
-    font-size: 14px;
+    font-size: 14px !important;
     font-style: normal;
     font-weight: 500;
   }
 
   #smDate{
     color: #363636;
-    font-size: calc(12px + 0.5vw);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -26,26 +27,30 @@
   
   .eachName {
     color: #1f1f1f;
-    font-size: 16px;
+    font-size: 16px !important;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    width: 290px;
   }
   
   .eachType {
     color: #494848;
-    font-size: 14px;
+    font-size: 14px !important;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    width: 300px;
+    text-align: center;
   }
   
   .eachDesc {
     color: #494848;
-    font-size: 14px;
+    font-size: 14px !important;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    width: 500px;
   }
 
   #smDesc{
@@ -58,19 +63,25 @@
   }
   
   .eachAmountCredit {
-    font-size: 14px;
+    font-size: 14px !important;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    width: 100px;
+    text-align: center;
   }
   
   .eachTotamount {
     color: #082341;
-    font-size: 14px;
+    font-size: 14px !important;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    width: 150px;
+    text-align: center;
   }
+
+  
   
   .wrap{
     overflow-wrap: break-word;
